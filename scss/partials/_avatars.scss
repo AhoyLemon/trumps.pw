@@ -1,0 +1,20 @@
+$picSize: 15vw;
+$halfSize: $picSize / 2;
+
+.trumps {
+  a.avatar { display:block; width:$picSize; height:$picSize; background-size:cover; border-radius: 50%;
+    top:calc(50vh - #{$halfSize}); left:calc(50vw - #{$halfSize}); box-shadow: 0 0 5px $black; transition:all 0.5s ease;
+    &.donald  { position: absolute; transform: scale(1);    z-index: 10; }
+    &.ivanka  { position: absolute; transform: scale(0.9);  z-index: 9; margin-left:($picSize * .76); margin-top:($picSize * .26); }
+    &.donjr   { position: absolute; transform: scale(0.85); z-index: 8; margin-left:-($picSize * .51); margin-top:($picSize * .56); }
+    &.eric    { position: absolute; transform: scale(0.7);  z-index: 7; margin-left:-($picSize * .66); margin-top:-($picSize * .41); }
+    &.jared   { position: absolute; transform: scale(0.7);  z-index: 6; margin-left:($picSize * 1.16); margin-top:-($picSize * .26); }
+    &.tiffany { position: absolute; transform: scale(0.56); z-index: 5; margin-left:($picSize * .16); margin-top:($picSize * .66); }
+    &.melania { position: absolute; transform: scale(0.7);  z-index: 4; margin-left:($picSize * .29); margin-top:-($picSize * .66); }
+    &.barron  { position: absolute; transform: scale(0.5);  z-index: 3; margin-left:($picSize * .06); margin-top:-($picSize * 1.05); }
+    &.ivana   { position: absolute; transform: scale(0.47); z-index: 2; margin-left:-($picSize * .89); margin-top:($picSize * .065); }
+    
+    &:hover { transform: scale(1.25); z-index: 11; }
+    
+  }
+}

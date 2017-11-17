@@ -1,0 +1,38 @@
+.javascripts
+  script(src="https://code.jquery.com/jquery-3.2.1.min.js")
+  if testing
+    script(src="https://unpkg.com/vue")
+  else
+    script(src="js/min/vue.min.js")
+  script(src="js/libraries/vue.min.js")
+  script.
+    // As a plugin
+    Vue.use(VueMask.VueMaskPlugin);
+
+    // As a directive
+    //Vue.directive('mask', VueMask.VueMaskDirective);
+  script(src="js/libraries/pnotify.custom.min.js")
+  script(src="js/min/trumps.min.js?lastUpdated="+lastUpdated)
+  script.
+    //------ Pnotify settings & defaults ----------------
+    //PNotify.prototype.options.stack.firstpos1 = 85;
+    //PNotify.prototype.options.stack.firstpos2 = 5;
+    //PNotify.prototype.options.width = '120px';
+    //PNotify.prototype.options.delay = 4000;
+    //PNotify.prototype.options.history.menu = true;
+    //PNotify.prototype.options.nonblock = true;
+    //PNotify.prototype.nonblock.nonblock = true;
+    //PNotify.prototype.options.icon = false;
+    //PNotify.prototype.options.stack = { "dir1": "down", "dir2": "right", "firstpos1": ($(window).height() - 150), "firstpos2": 30 }
+    //PNotify.prototype.options.stack = {"dir1": "right", "dir2": "up", "push": "top"};
+    //PNotify.prototype.options.type = "info";
+    PNotify.prototype.options.icon = false;
+    //var stack_bottomright = {"dir1": "up", "dir2": "right", "spacing1": 0, "spacing2": 0};
+    //var stack_topleft = {"dir1": "down", "dir2": "right", "push": "top"};
+    var stack_bottomright = {"dir1": "up", "dir2": "left", "firstpos1": 25, "firstpos2": 25};
+    
+    PNotify.prototype.options.stack = stack_bottomright;
+    PNotify.prototype.options.addclass = "stack-bottomright";
+    PNotify.prototype.options.animate.animate = true;
+    PNotify.prototype.options.animate.in_class = 'bounceInDown',
+    PNotify.prototype.options.animate.out_class = 'bounceOutDown';
