@@ -7,9 +7,21 @@ var trumpFamily = [
     fullName: "Donald J. Trump",
     rounds: [
       { 
+        type: roundTypes.nuclearcodes,
+        info: 'Now give us the nuclear codes for <b class="points" style="font-size:130%">300 points</b>!',
+        points: 300
+      },
+      { 
         type: roundTypes.twitter,
         username: '@realDonaldTrump',
         points: 100
+      },
+      { 
+        type: roundTypes.stormfront
+      },
+      { 
+        type: roundTypes.reddit,
+        points: 30
       }
     ]
   },
@@ -64,6 +76,9 @@ var trumpFamily = [
     rounds: [
       {
         type:roundTypes.fetlife
+      },
+      {
+        type:roundTypes.furaffinity
       }
     ]
   },

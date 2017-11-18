@@ -41,5 +41,27 @@ var roundTypes = {
     name: "email",
     icon: 'email.svg',
     points: 70
+  },
+  reddit: {
+    name: "Reddit",
+    icon: 'reddit.svg',
+    points: 20
+  },
+  stormfront: {
+    name: "Stormfront",
+    icon: 'wpww.svg',
+    points: 30
+  },
+  furaffinity: {
+    name: "Fur Affinity",
+    icon: 'furaffinity.svg',
+    points: 30
+  },
+  nuclearcodes: {
+    name: "nuclear codes",
+    icon: 'nuclear.svg',
+    loginType: 'password only',
+    passwordType: 'code',
+    points: 100
   }
 };

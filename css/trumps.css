@@ -616,7 +616,7 @@ body {
       .password-screen .top-row .welcome-text span {
         padding-left: 0.4em;
         font-size: 3em; }
-  .password-screen .instruction-row b {
+  .password-screen .instruction-row .points {
     color: #4885ed; }
   .password-screen .formbox {
     padding-top: 2em;

@@ -11,8 +11,10 @@
       span Hi, {{my.name}}!
   .instruction-row
     span(v-if="round.info" v-html="round.info")
-    span(v-else) Enter your {{round.name}} credentials for 
-      b {{round.points}} points!
+    span(v-else) Enter your 
+      b {{round.name}} 
+      | credentials for 
+      b.points {{round.points}} points!
 
   .formbox(v-if="round.type.name == 'credit card'")
   
@@ -45,12 +47,14 @@
     .icon-holder
 
       .icon-box(v-if="round.type.icon")
-        img(:src="'svg/logo/'+round.type.icon")
+        img(:src="'/svg/logo/'+round.type.icon")
 
     .input-holder
 
       //- USERNAME
-      label.username(v-if="round.type.name == 'Facebook'")
+      label.username(v-else-if="round.loginType == 'password only'")
+        // nothing here.
+      label.username(v-else-if="round.type.name == 'Facebook'")
         span Email or Phone
         input(type="text" v-model="round.username")
         .error-msg.username-error(v-if="errors.username" v-html="errors.username")

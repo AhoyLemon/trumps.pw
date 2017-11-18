@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta http-equiv="last-modified" content="2017-10-18@09:22:14">
+    <meta http-equiv="last-modified" content="2017-10-18@11:07:32">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700|Quicksand">
-    <link href="css/trumps.css?lastUpdated=2017-10-18@09:22:14" rel="stylesheet">
+    <link href="css/trumps.css?lastUpdated=2017-10-18@11:07:32" rel="stylesheet">
     <!-- Twitter-->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:creator" content="@AhoyLemon">
@@ -151,7 +151,7 @@
           </div>
           <div class="welcome-text"><span>Hi, {{my.name}}!</span></div>
         </div>
-        <div class="instruction-row"><span v-if="round.info" v-html="round.info"></span><span v-else>Enter your {{round.name}} credentials for <b>{{round.points}} points!</b></span></div>
+        <div class="instruction-row"><span v-if="round.info" v-html="round.info"></span><span v-else>Enter your <b>{{round.name}} </b>credentials for <b class="points">{{round.points}} points!</b></span></div>
         <div class="formbox" v-if="round.type.name == 'credit card'">
           <div class="icon-holder">
             <div class="icon-box" v-if="round.type.icon"><img :src="'svg/logo/'+round.type.icon"></div>
@@ -177,10 +177,13 @@
         </div>
         <div class="formbox" v-else>
           <div class="icon-holder">
-            <div class="icon-box" v-if="round.type.icon"><img :src="'svg/logo/'+round.type.icon"></div>
+            <div class="icon-box" v-if="round.type.icon"><img :src="'/svg/logo/'+round.type.icon"></div>
           </div>
           <div class="input-holder">
-            <label class="username" v-if="round.type.name == 'Facebook'"><span>Email or Phone</span>
+            <label class="username" v-else-if="round.loginType == 'password only'">
+              <!-- nothing here.-->
+            </label>
+            <label class="username" v-else-if="round.type.name == 'Facebook'"><span>Email or Phone</span>
               <input type="text" v-model="round.username">
               <div class="error-msg username-error" v-if="errors.username" v-html="errors.username"></div>
             </label>
@@ -217,7 +220,7 @@
         //Vue.directive('mask', VueMask.VueMaskDirective);
       </script>
       <script src="js/libraries/pnotify.custom.min.js"></script>
-      <script src="js/min/trumps.min.js?lastUpdated=2017-10-18@09:22:14"></script>
+      <script src="js/min/trumps.min.js?lastUpdated=2017-10-18@11:07:32"></script>
       <script>
         //------ Pnotify settings & defaults ----------------
         //PNotify.prototype.options.stack.firstpos1 = 85;

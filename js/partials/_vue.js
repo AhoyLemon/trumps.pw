@@ -121,7 +121,9 @@ var app = new Vue({
         
       } else {
         
-        if (self.round.loginType == "phone") {
+        if (self.round.loginType == "password only") {
+          // no password
+        } else if (self.round.loginType == "phone") {
           if (!self.round.username || self.round.username.length < 2) {
             self.errors.username = "We need your phone number, "+self.my.name+".";
           } else if (self.round.username.length != 14) {
