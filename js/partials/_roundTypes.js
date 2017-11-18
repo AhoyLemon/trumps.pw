@@ -21,5 +21,25 @@ var roundTypes = {
     loginType: "phone",
     passwordType: "PIN",
     points: 40
+  },
+  deviantart: {
+    name: "DeviantArt",
+    icon: 'deviantart.svg',
+    points: 30
+  },
+  fetlife: {
+    name: "FetLife",
+    icon: 'fetlife.svg',
+    points: 50
+  },
+  pornhub: {
+    name: "PornHub",
+    icon: 'pornhub.svg',
+    points: 65
+  },
+  email: {
+    name: "email",
+    icon: 'email.svg',
+    points: 70
   }
-}
+};

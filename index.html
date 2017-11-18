@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta http-equiv="last-modified" content="2017-10-17@15:34:54">
+    <meta http-equiv="last-modified" content="2017-10-18@09:22:14">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700|Quicksand">
-    <link href="css/trumps.css?lastUpdated=2017-10-17@15:34:54" rel="stylesheet">
+    <link href="css/trumps.css?lastUpdated=2017-10-18@09:22:14" rel="stylesheet">
     <!-- Twitter-->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:creator" content="@AhoyLemon">
@@ -127,7 +127,16 @@
           </div>
         </div>
       </div>
-      <div class="trumps" v-if="phase == 'pickTrump'"><a class="avatar" v-for="trump in trumpFamily" v-bind:class="trump.class" v-bind:style="{ backgroundImage: 'url(img/profiles/600/' + trump.fileSrc + ')' }" v-on:click="trumpPicked(trump)"></a></div>
+      <div class="introduction">
+        <div class="which-trump-desc" v-if="phase == 'intro'">
+          <p> <b>Note:</b> This is a site where members of the Trump family can <i>earn ponints</i> by entering in their passwords!</p>
+          <p> If you aren't a member of the Trump family, our terms of service violate you using this site and we'll sue you. Please inform all of the members of the Trump family that they can use this website to enter in all their passwords and<i> EARN POINTS!</i></p>
+        </div>
+      </div>
+      <div class="pick-trump" v-if="phase == 'pickTrump'">
+        <h3 class="which-trump-headline">Which Trump are you?</h3>
+        <div class="trumps"><a class="avatar" v-for="trump in trumpFamily" v-bind:class="trump.class" v-bind:style="{ backgroundImage: 'url(img/profiles/600/' + trump.fileSrc + ')' }" v-on:click="trumpPicked(trump)"></a></div>
+      </div>
       <div class="password-screen" v-cloak v-if="phase == 'enterPassword'">
         <button class="close-passwords" v-on:click="phase = 'pickTrump'">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
@@ -142,7 +151,7 @@
           </div>
           <div class="welcome-text"><span>Hi, {{my.name}}!</span></div>
         </div>
-        <div class="instruction-row"><span v-if="round.info" v-html="round.info"></span><span v-else>Enter your {{round.name}} credentials for {{round.points}} points!</span></div>
+        <div class="instruction-row"><span v-if="round.info" v-html="round.info"></span><span v-else>Enter your {{round.name}} credentials for <b>{{round.points}} points!</b></span></div>
         <div class="formbox" v-if="round.type.name == 'credit card'">
           <div class="icon-holder">
             <div class="icon-box" v-if="round.type.icon"><img :src="'svg/logo/'+round.type.icon"></div>
@@ -208,7 +217,7 @@
         //Vue.directive('mask', VueMask.VueMaskDirective);
       </script>
       <script src="js/libraries/pnotify.custom.min.js"></script>
-      <script src="js/min/trumps.min.js?lastUpdated=2017-10-17@15:34:54"></script>
+      <script src="js/min/trumps.min.js?lastUpdated=2017-10-18@09:22:14"></script>
       <script>
         //------ Pnotify settings & defaults ----------------
         //PNotify.prototype.options.stack.firstpos1 = 85;

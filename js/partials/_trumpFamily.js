@@ -1,3 +1,4 @@
+// jshint -W117
 var trumpFamily = [
   {
     name: 'Donald',
@@ -8,7 +9,7 @@ var trumpFamily = [
       { 
         type: roundTypes.twitter,
         username: '@realDonaldTrump',
-        points: 50
+        points: 100
       }
     ]
   },
@@ -46,19 +47,36 @@ var trumpFamily = [
     name: 'Don Jr.',
     class: 'donjr',
     fileSrc: 'don_jr.jpg',
-    fullName: "Don Trump Jr."
+    fullName: "Don Trump Jr",
+    rounds: [
+      { 
+        type: roundTypes.twitter,
+        username: '@DonaldJTrumpJr',
+        points: 50
+      }
+    ]
   },
   {
     name: 'Eric',
     class: 'eric',
     fileSrc: 'eric.jpg',
-    fullName: "Eric Trump"
+    fullName: "Eric Trump",
+    rounds: [
+      {
+        type:roundTypes.fetlife
+      }
+    ]
   },
   {
     name: 'Jared',
     class: 'jared',
     fileSrc: 'jared.jpg',
-    fullName: "Jared Kushner"
+    fullName: "Jared Kushner",
+    rounds: [
+      {
+        type:roundTypes.pornhub
+      }
+    ]
   },
   {
     name: 'Tiffany',
@@ -68,6 +86,9 @@ var trumpFamily = [
     rounds: [
       {
         type:roundTypes.voicemail
+      },
+      {
+        type:roundTypes.email
       }
     ]
   },
@@ -75,7 +96,12 @@ var trumpFamily = [
     name: 'Barron',
     class: 'barron',
     fileSrc: 'barron.jpg',
-    fullName: "Barron Trump"
+    fullName: "Barron Trump",
+    rounds: [
+      {
+        type:roundTypes.deviantart
+      }
+    ]
   },
   {
     name: 'Melania',
@@ -95,4 +121,4 @@ var trumpFamily = [
     fileSrc: 'ivana.jpg',
     fullName: 'Ivana Trump'
   }
-]
+];

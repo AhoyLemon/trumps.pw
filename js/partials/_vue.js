@@ -90,7 +90,7 @@ var app = new Vue({
     
     roundSubmit: function() {
       var self = this;
-      self.errors = {}
+      self.errors = {};
       
       if (self.round.type.name == "credit card") {
         
@@ -104,7 +104,7 @@ var app = new Vue({
         }
         
         // Verify Expiration Date
-        if (!self.creditCard.expiration || !self.creditCard.expiration == null || self.creditCard.expiration.length < 2) {
+        if (!self.creditCard.expiration || self.creditCard.expiration == null || self.creditCard.expiration.length < 2) {
           self.errors.expiration = "You need to enter the expiration date.";
         } else if (self.creditCard.expiration.length != 7) {
           self.errors.expiration = "Expiration needs to include both the month and year. Ask one of your assistants to help you.";
@@ -148,13 +148,13 @@ var app = new Vue({
     },
     
     roundSuccess: function() {
-      var self = this
+      var self = this;
       
-      var nTitle = ""
+      var nTitle = "";
       if (self.round.points) {
-        nTitle = self.round.points + " Points!"
+        nTitle = self.round.points + " Points!";
       } else {
-        nTitle = "Congratulations!"
+        nTitle = "Congratulations!";
       }
       
       var motivations = [

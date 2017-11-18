@@ -11,7 +11,8 @@
       span Hi, {{my.name}}!
   .instruction-row
     span(v-if="round.info" v-html="round.info")
-    span(v-else) Enter your {{round.name}} credentials for {{round.points}} points!
+    span(v-else) Enter your {{round.name}} credentials for 
+      b {{round.points}} points!
 
   .formbox(v-if="round.type.name == 'credit card'")
   

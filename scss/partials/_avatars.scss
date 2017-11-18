@@ -1,5 +1,7 @@
 $picSize: 15vw;
 $halfSize: $picSize / 2;
+$quarterSize: $picSize / 4;
+
 
 .trumps {
   a.avatar { display:block; width:$picSize; height:$picSize; background-size:cover; border-radius: 50%;
@@ -18,3 +20,12 @@ $halfSize: $picSize / 2;
     
   }
 }
+
+.which-trump-headline { font-family: $serif; font-weight: $bold; @extend %goldText; font-size:5vw; padding-bottom: 0.5em; text-align: center; }
+.which-trump-desc { font-family: $sans; color:$white; max-width: 800px; margin-left: auto; margin-right: auto; margin-bottom: 1em; }
+.trumps { @include flex-container(); justify-content: center;
+  a.avatar { @include flex-item($picSize,0); height: $picSize; background-size: cover; border-radius: 50%; margin-right: $quarterSize; margin-bottom: $quarterSize; transition:all 0.5s ease;
+    &:hover { transform: scale(1.25); z-index: 11; }
+  }
+}
+

@@ -14,9 +14,21 @@ html(lang="en")
       
       include partials/_sidebar.pug
       
-      
-      .trumps(v-if="phase == 'pickTrump'")
-        a.avatar(v-for="trump in trumpFamily" v-bind:class="trump.class" v-bind:style="{ backgroundImage: 'url(img/profiles/600/' + trump.fileSrc + ')' }" v-on:click="trumpPicked(trump)")
+      .introduction
+        
+        .which-trump-desc(v-if="phase == 'intro'")
+          p 
+            b Note:
+            |  This is a site where members of the Trump family can 
+            i earn ponints
+            |  by entering in their passwords!
+          p  If you aren't a member of the Trump family, our terms of service violate you using this site and we'll sue you. Please inform all of the members of the Trump family that they can use this website to enter in all their passwords and
+            i  EARN POINTS!
+            
+      .pick-trump(v-if="phase == 'pickTrump'")
+        h3.which-trump-headline Which Trump are you?
+        .trumps
+          a.avatar(v-for="trump in trumpFamily" v-bind:class="trump.class" v-bind:style="{ backgroundImage: 'url(img/profiles/600/' + trump.fileSrc + ')' }" v-on:click="trumpPicked(trump)")
       
       include partials/_round.pug
     
