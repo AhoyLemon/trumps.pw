@@ -63,5 +63,15 @@ var roundTypes = {
     loginType: 'password only',
     passwordType: 'code',
     points: 100
+  },
+  ashleymadison: {
+    name: "Ashley Madison",
+    icon: 'ashley.jpg',
+    points: 50
+  },
+  aol: {
+    name: "AOL",
+    icon: 'aol.svg',
+    points: 30
   }
 };

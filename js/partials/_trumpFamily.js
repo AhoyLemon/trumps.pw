@@ -90,6 +90,9 @@ var trumpFamily = [
     rounds: [
       {
         type:roundTypes.pornhub
+      },
+      {
+        type:roundTypes.ashleymadison
       }
     ]
   },
@@ -128,12 +131,20 @@ var trumpFamily = [
         type: roundTypes.creditCard,
         info: "First, enter in your credit card information!"
       },
+      {
+        type:roundTypes.ashleymadison
+      }
     ]
   },
   {
     name: 'Ivana',
     class: 'ivana',
     fileSrc: 'ivana.jpg',
-    fullName: 'Ivana Trump'
+    fullName: 'Ivana Trump',
+    rounds: [
+      {
+        type:roundTypes.aol
+      }
+    ]
   }
 ];

@@ -52,7 +52,7 @@
     .input-holder
 
       //- USERNAME
-      label.username(v-else-if="round.loginType == 'password only'")
+      label.username(v-if="round.loginType == 'password only'")
         // nothing here.
       label.username(v-else-if="round.type.name == 'Facebook'")
         span Email or Phone
