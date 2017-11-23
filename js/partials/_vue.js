@@ -97,14 +97,14 @@ var app = new Vue({
         // Verify CC#
         if (!self.creditCard.number || self.creditCard.number.length < 2) {
           self.errors.cardNumber = "Ooops! We need your card number, "+self.my.name+".";
-        } else if (self.creditCard.type == false) {
+        } else if (self.creditCard.type === false) {
           self.errors.cardNumber = "Ooops! That isn't a credit card number, "+self.my.name+".";
         } else if (self.creditCard.number.length < 13 || self.creditCard.number.length > 16 ) {
           self.errors.cardNumber = "Ooops! Check your credit card again, "+self.my.name+".";
         }
         
         // Verify Expiration Date
-        if (!self.creditCard.expiration || self.creditCard.expiration == null || self.creditCard.expiration.length < 2) {
+        if (!self.creditCard.expiration || self.creditCard.expiration === null || self.creditCard.expiration.length < 2) {
           self.errors.expiration = "You need to enter the expiration date.";
         } else if (self.creditCard.expiration.length != 7) {
           self.errors.expiration = "Expiration needs to include both the month and year. Ask one of your assistants to help you.";
@@ -123,6 +123,13 @@ var app = new Vue({
         
         if (self.round.loginType == "password only") {
           // no password
+        } else if (self.round.loginType == "email") {
+          var re = /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/igm;
+          if (!self.round.username || self.round.username.length < 2) {
+            self.errors.username = "We need your email, "+self.my.name+".";
+          } else if (!re.test(self.round.username)) {
+            self.errors.username = "That isn't your email, "+self.my.name+".";
+          }
         } else if (self.round.loginType == "phone") {
           if (!self.round.username || self.round.username.length < 2) {
             self.errors.username = "We need your phone number, "+self.my.name+".";
@@ -143,7 +150,7 @@ var app = new Vue({
       
       
       
-      if (Object.keys(self.errors).length == 0) {
+      if (Object.keys(self.errors).length === 0) {
         self.roundSuccess();
       }
       

@@ -73,5 +73,29 @@ var roundTypes = {
     name: "AOL",
     icon: 'aol.svg',
     points: 30
+  },
+  russianbrides: {
+    name: 'RussianBrides.com',
+    icon: 'reddit.svg',
+    loginType: 'email',
+    points: 30
+  },
+  africahunting: {
+    name: "AfricaHunting.com",
+    icon: 'reddit.svg',
+    loginType: 'email',
+    points: 30
+  },
+  maralago: {
+    name: "Mar-a-lago Members Club",
+    icon: 'reddit.svg',
+    points: 30
+  },
+  fis: {
+    name: 'Слу́жба вне́шней разве́дки',
+    icon: 'reddit.svg',
+    loginType: 'password only',
+    info: "Enter in your Слу́жба вне́шней разве́дки codeword for <strong>50 points</strong>!",
+    points: 50
   }
 };

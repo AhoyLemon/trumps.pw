@@ -54,6 +54,10 @@
       //- USERNAME
       label.username(v-if="round.loginType == 'password only'")
         // nothing here.
+      label.username(v-else-if="round.loginType == 'email'")
+        span Email Address
+        input(type="email" v-model="round.username" v-bind:class="{error: errors.username}")
+        .error-msg.username-error(v-if="errors.username" v-html="errors.username")
       label.username(v-else-if="round.type.name == 'Facebook'")
         span Email or Phone
         input(type="text" v-model="round.username")

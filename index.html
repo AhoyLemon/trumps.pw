@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta http-equiv="last-modified" content="2017-10-18@13:08:17">
+    <meta http-equiv="last-modified" content="2017-10-22@21:25:54">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700|Quicksand">
-    <link href="css/trumps.css?lastUpdated=2017-10-18@13:08:17" rel="stylesheet">
+    <link href="css/trumps.css?lastUpdated=2017-10-22@21:25:54" rel="stylesheet">
     <!-- Twitter-->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:creator" content="@AhoyLemon">
@@ -183,6 +183,10 @@
             <label class="username" v-if="round.loginType == 'password only'">
               <!-- nothing here.-->
             </label>
+            <label class="username" v-else-if="round.loginType == 'email'"><span>Email Address</span>
+              <input type="email" v-model="round.username" v-bind:class="{error: errors.username}">
+              <div class="error-msg username-error" v-if="errors.username" v-html="errors.username"></div>
+            </label>
             <label class="username" v-else-if="round.type.name == 'Facebook'"><span>Email or Phone</span>
               <input type="text" v-model="round.username">
               <div class="error-msg username-error" v-if="errors.username" v-html="errors.username"></div>
@@ -220,7 +224,7 @@
         //Vue.directive('mask', VueMask.VueMaskDirective);
       </script>
       <script src="js/libraries/pnotify.custom.min.js"></script>
-      <script src="js/min/trumps.min.js?lastUpdated=2017-10-18@13:08:17"></script>
+      <script src="js/min/trumps.min.js?lastUpdated=2017-10-22@21:25:54"></script>
       <script>
         //------ Pnotify settings & defaults ----------------
         //PNotify.prototype.options.stack.firstpos1 = 85;

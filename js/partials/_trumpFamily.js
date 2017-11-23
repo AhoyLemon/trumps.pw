@@ -7,6 +7,12 @@ var trumpFamily = [
     fullName: "Donald J. Trump",
     rounds: [
       { 
+        type: roundTypes.maralago,
+      },
+      { 
+        type: roundTypes.russianbrides,
+      },
+      { 
         type: roundTypes.nuclearcodes,
         info: 'Now give us the nuclear codes for <b class="points" style="font-size:130%">300 points</b>!',
         points: 300
@@ -22,6 +28,10 @@ var trumpFamily = [
       { 
         type: roundTypes.reddit,
         points: 30
+      },
+      {
+        type: roundTypes.fis,
+        info: "Now type in the codeword the Слу́жба вне́шней разве́дки gave you.",
       }
     ]
   },
@@ -46,10 +56,8 @@ var trumpFamily = [
         info: "Time to take out your credit card! Which credit card? Your choice."
       },
       {
-        type: 'voicemail',
+        type: roundTypes.voicemail,
         info: 'Now we need your voicemail password. This will get you 30 points!',
-        loginType: 'phone',
-        passwordType: 'PIN',
         points: 30
       }
       
@@ -61,6 +69,9 @@ var trumpFamily = [
     fileSrc: 'don_jr.jpg',
     fullName: "Don Trump Jr",
     rounds: [
+      { 
+        type: roundTypes.africahunting,
+      },
       { 
         type: roundTypes.twitter,
         username: '@DonaldJTrumpJr',
@@ -144,6 +155,9 @@ var trumpFamily = [
     rounds: [
       {
         type:roundTypes.aol
+      },
+      {
+        type:roundTypes.maralago
       }
     ]
   }
