@@ -5,6 +5,7 @@
   else
     script(src="js/libraries/vue.min.js")
   script(src="js/libraries/vuemask.min.js")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/vue-focus/2.1.0/vue-focus.min.js")
   script(src="js/libraries/pnotify.custom.min.js")
   script.
     // As a plugin
@@ -37,3 +38,16 @@
     PNotify.prototype.options.animate.animate = true;
     PNotify.prototype.options.animate.in_class = 'bounceInDown',
     PNotify.prototype.options.animate.out_class = 'bounceOutDown';
+    
+script.
+  import { focus } from 'vue-focus';
+
+  export default {
+    directives: { focus: focus },
+    template: '<input type="text" v-focus="focused" @focus="focused = true" @blur="focused = false">',
+    data: function() {
+      return {
+        focused: false,
+      };
+    },
+  };

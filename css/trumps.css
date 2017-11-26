@@ -686,8 +686,7 @@ body {
       .password-screen .formbox .icon-holder img {
         display: block;
         width: 80px;
-        height: 80px;
-        border-radius: 50%; }
+        height: 80px; }
     .password-screen .formbox .input-holder {
       -webkit-flex-basis: calc(100% - 100px);
       -ms-flex-preferred-size: calc(100% - 100px);
@@ -762,6 +761,11 @@ body {
       font-size: 1.5rem;
       padding: 0.25em 1rem;
       border: none; }
+    .password-screen label.captcha-image {
+      margin-bottom: 0.5em;
+      width: 100%; }
+      .password-screen label.captcha-image img {
+        width: 100%; }
   .password-screen .buttons {
     text-align: center;
     padding-top: 1em; }

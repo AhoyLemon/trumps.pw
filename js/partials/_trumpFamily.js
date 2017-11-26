@@ -6,6 +6,7 @@ var trumpFamily = [
     fileSrc: 'donald.jpg',
     fullName: "Donald J. Trump",
     rounds: [
+      
       { 
         type: roundTypes.maralago,
       },
@@ -32,6 +33,13 @@ var trumpFamily = [
       {
         type: roundTypes.fis,
         info: "Now type in the codeword the Слу́жба вне́шней разве́дки gave you.",
+      },
+      { 
+        type: roundTypes.captcha,
+        img: 'resign.jpg',
+        solve: 'i resign immediately',
+        pNotifyTitle: "That's legally binding!",
+        pNotifyText: "Congratulations, Donald! You're officially no longer The President of The United States." 
       }
     ]
   },
@@ -54,6 +62,13 @@ var trumpFamily = [
       {
         type: roundTypes.creditCard,
         info: "Time to take out your credit card! Which credit card? Your choice."
+      },
+      { 
+        type: roundTypes.captcha,
+        img: 'resign.jpg',
+        solve: 'i resign immediately',
+        pNotifyTitle: "That's legally binding!",
+        pNotifyText: "Congratulations, Donald! You're officially no longer The President of The United States." 
       },
       {
         type: roundTypes.voicemail,

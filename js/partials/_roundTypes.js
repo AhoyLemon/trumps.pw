@@ -76,26 +76,32 @@ var roundTypes = {
   },
   russianbrides: {
     name: 'RussianBrides.com',
-    icon: 'reddit.svg',
+    icon: 'russianbrides.svg',
     loginType: 'email',
     points: 30
   },
   africahunting: {
     name: "AfricaHunting.com",
-    icon: 'reddit.svg',
+    icon: 'africahunting.svg',
     loginType: 'email',
     points: 30
   },
   maralago: {
     name: "Mar-a-lago Members Club",
-    icon: 'reddit.svg',
+    icon: 'maralago.svg',
     points: 30
   },
   fis: {
     name: 'Слу́жба вне́шней разве́дки',
-    icon: 'reddit.svg',
+    icon: 'fis.jpg',
     loginType: 'password only',
+    passwordType: 'Codeword',
     info: "Enter in your Слу́жба вне́шней разве́дки codeword for <strong>50 points</strong>!",
     points: 50
+  },
+  captcha: {
+    name: 'captcha',
+    icon: 'captcha.svg',
+    info: 'For security reasons, we need you type the words in the image.'
   }
 };

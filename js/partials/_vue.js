@@ -7,6 +7,7 @@ var app = new Vue({
     today: {
       year: new Date().getFullYear()
     },
+    focused: true,
     sidebarVisible: false,
     addToHomescreen: false,
     filePath: 'img/profiles/600/',
@@ -32,7 +33,7 @@ var app = new Vue({
     rounds: [],
   },
   methods: {
-    
+
     trumpPicked: function(t) {
       var self = this;
       self.my.name = t.name;
@@ -40,12 +41,12 @@ var app = new Vue({
       self.my.fullName = t.fullName;
       self.phase = 'enterPassword';
       self.rounds = t.rounds;
-      
+
       self.roundNum = -1;
       self.nextRound();
-      
+
     },
-    
+
     checkCreditCardType: function() {
       var self = this;
       if (self.creditCard.number.startsWith(3)) {
@@ -65,7 +66,7 @@ var app = new Vue({
         self.creditCard.type = false;
       }
     },
-    
+
     nextRound: function() {
       var self = this;
       self.roundNum++;
@@ -75,31 +76,34 @@ var app = new Vue({
       } else {
         self.round = self.rounds[self.roundNum];
       }
-      
+
       if (!self.round.points) {
         self.round.points = self.round.type.points;
       }
       if (!self.round.name) {
         self.round.name = self.round.type.name;
       }
-      
+
       if (self.round.type.loginType && !self.round.loginType) {
         self.round.loginType = self.round.type.loginType;
       }
-      
+
       if (self.round.type.passwordType && !self.round.passwordType) {
         self.round.passwordType = self.round.type.passwordType;
       }
-      
-      
+
+      if (self.round.type.info && !self.round.info) {
+        self.round.info = self.round.type.info;
+      }
+
     },
-    
+
     roundSubmit: function() {
       var self = this;
       self.errors = {};
-      
+
       if (self.round.type.name == "credit card") {
-        
+
         // Verify CC#
         if (!self.creditCard.number || self.creditCard.number.length < 2) {
           self.errors.cardNumber = "Ooops! We need your card number, "+self.my.name+".";
@@ -108,7 +112,7 @@ var app = new Vue({
         } else if (self.creditCard.number.length < 13 || self.creditCard.number.length > 16 ) {
           self.errors.cardNumber = "Ooops! Check your credit card again, "+self.my.name+".";
         }
-        
+
         // Verify Expiration Date
         if (!self.creditCard.expiration || self.creditCard.expiration === null || self.creditCard.expiration.length < 2) {
           self.errors.expiration = "You need to enter the expiration date.";
@@ -117,16 +121,25 @@ var app = new Vue({
         } else if (parseInt(self.creditCard.expiration.split('/')[1]) < self.today.year) {
           self.errors.expiration = "This one is expired! Try another.";
         }
-        
+
         // Verify CVC
         if (!self.creditCard.cvc || self.creditCard.cvc.length < 3) {
           self.errors.cvc = "It's that number on the back of the card";
         } else if (self.creditCard.cvc.length > 4) {
           self.errors.cvc = "That's too many numbers";
-        } 
+        }
         
+      } else if (self.round.type.name == "captcha") {
+        
+        // Remove periods, lowercase everything. Do they match?
+        if (!self.round.password) {
+          self.errors.password = "Ooops! Type the words above";
+        } else if (self.round.password.toLowerCase().replace(/\./g, "") != self.round.solve) {
+          self.errors.password = "Make sure you type the words above";
+        }
+
       } else {
-        
+
         if (self.round.loginType == "password only") {
           // no password
         } else if (self.round.loginType == "email") {
@@ -147,46 +160,56 @@ var app = new Vue({
             self.errors.username = "Ooops! We need a username, "+self.my.name+".";
           }
         }
-        
+
         if (!self.round.password || self.round.password.length < 2) {
           self.errors.password = "Ooops! You forgot to enter your password";
         }
       }
       
       
-      
-      
+
+
+
+
       if (Object.keys(self.errors).length === 0) {
         self.roundSuccess();
       }
-      
+
     },
-    
+
     roundSuccess: function() {
       var self = this;
-      
+
       var nTitle = "";
-      if (self.round.points) {
+      if (self.round.pNotifyTitle) {
+        nTitle = self.round.pNotifyTitle;
+      } else if (self.round.points) {
         nTitle = self.round.points + " Points!";
       } else {
         nTitle = "Congratulations!";
       }
-      
+
       var motivations = [
         "Keep entering passwords to earn points and unlock rewards!",
         "Keep entering passwords to learn the <i>truth</i> about Benghazi!",
         "Barack Obama will <i>hate</i> that you entered in that password!",
         "Crooked Hillary Clinton couldn't think of a password like that!",
       ];
-      var nText = randomFrom(motivations);
       
+      var nText = "";
+      if (self.round.pNotifyText) {
+        nText = self.round.pNotifyText;
+      } else {
+        nText = randomFrom(motivations);
+      }
+
       new PNotify({
         title: nTitle,
         text: nText
       });
       self.nextRound();
     },
-    
+
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // CHECK BROWSER
     checkBrowser: function() {
@@ -236,10 +259,21 @@ var app = new Vue({
         this.browser = "chrome";
       }
     }
-    
-    
+
+
   },
   mounted: function () {
-    
+
+  }
+});
+
+Vue.directive('focus', {
+  inserted: function (el) {
+    el.focus();
+  },
+  update: function (el) {
+    Vue.nextTick(function() {
+      el.focus();
+    });
   }
 });
