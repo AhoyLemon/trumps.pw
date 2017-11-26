@@ -69,7 +69,13 @@ var app = new Vue({
     nextRound: function() {
       var self = this;
       self.roundNum++;
-      self.round = self.rounds[self.roundNum];
+
+      if (self.roundNum >= (self.rounds.length)) {
+        alert('end!!!!!');
+      } else {
+        self.round = self.rounds[self.roundNum];
+      }
+      
       if (!self.round.points) {
         self.round.points = self.round.type.points;
       }
