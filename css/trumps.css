@@ -172,7 +172,7 @@ sup {
 svg {
   overflow: hidden; }
 
-.which-trump-headline, .password-screen .top-row .welcome-text span {
+.introduction h1, .which-trump-headline, .screen .top-row .welcome-text span {
   color: #D5AD6D;
   /*if no support for background-clip*/
   background: -webkit-linear-gradient(transparent, transparent), -webkit-linear-gradient(top, #d5ad6d 0%, #d5ad6d 26%, #e2ba78 35%, #a37e43 45%, #91703b 61%, #d5ad6d 100%);
@@ -301,8 +301,8 @@ ul {
   width: 14em;
   padding: 3.5rem 1rem 1rem 1rem;
   z-index: 1004;
-  font-family: 'Zilla Slab', serif;
-  font-size: 20px;
+  font-family: "Bitter", serif;
+  font-size: 18px;
   -webkit-transform: translateX(101%);
   -ms-transform: translateX(101%);
   transform: translateX(101%);
@@ -380,111 +380,8 @@ ul {
   #AddToHomeScreen {
     display: none; } }
 
-.trumps a.avatar {
-  display: block;
-  width: 15vw;
-  height: 15vw;
-  background-size: cover;
-  border-radius: 50%;
-  top: calc(50vh - 7.5vw);
-  left: calc(50vw - 7.5vw);
-  -webkit-box-shadow: 0 0 5px #212121;
-  box-shadow: 0 0 5px #212121;
-  -webkit-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease; }
-  .trumps a.avatar.donald {
-    position: absolute;
-    -webkit-transform: scale(1);
-    -ms-transform: scale(1);
-    transform: scale(1);
-    z-index: 10; }
-  .trumps a.avatar.ivanka {
-    position: absolute;
-    -webkit-transform: scale(0.9);
-    -ms-transform: scale(0.9);
-    transform: scale(0.9);
-    z-index: 9;
-    margin-left: 11.4vw;
-    margin-top: 3.9vw; }
-  .trumps a.avatar.donjr {
-    position: absolute;
-    -webkit-transform: scale(0.85);
-    -ms-transform: scale(0.85);
-    transform: scale(0.85);
-    z-index: 8;
-    margin-left: -7.65vw;
-    margin-top: 8.4vw; }
-  .trumps a.avatar.eric {
-    position: absolute;
-    -webkit-transform: scale(0.7);
-    -ms-transform: scale(0.7);
-    transform: scale(0.7);
-    z-index: 7;
-    margin-left: -9.9vw;
-    margin-top: -6.15vw; }
-  .trumps a.avatar.jared {
-    position: absolute;
-    -webkit-transform: scale(0.7);
-    -ms-transform: scale(0.7);
-    transform: scale(0.7);
-    z-index: 6;
-    margin-left: 17.4vw;
-    margin-top: -3.9vw; }
-  .trumps a.avatar.tiffany {
-    position: absolute;
-    -webkit-transform: scale(0.56);
-    -ms-transform: scale(0.56);
-    transform: scale(0.56);
-    z-index: 5;
-    margin-left: 2.4vw;
-    margin-top: 9.9vw; }
-  .trumps a.avatar.melania {
-    position: absolute;
-    -webkit-transform: scale(0.7);
-    -ms-transform: scale(0.7);
-    transform: scale(0.7);
-    z-index: 4;
-    margin-left: 4.35vw;
-    margin-top: -9.9vw; }
-  .trumps a.avatar.barron {
-    position: absolute;
-    -webkit-transform: scale(0.5);
-    -ms-transform: scale(0.5);
-    transform: scale(0.5);
-    z-index: 3;
-    margin-left: 0.9vw;
-    margin-top: -15.75vw; }
-  .trumps a.avatar.ivana {
-    position: absolute;
-    -webkit-transform: scale(0.47);
-    -ms-transform: scale(0.47);
-    transform: scale(0.47);
-    z-index: 2;
-    margin-left: -13.35vw;
-    margin-top: 0.975vw; }
-  .trumps a.avatar:hover {
-    -webkit-transform: scale(1.25);
-    -ms-transform: scale(1.25);
-    transform: scale(1.25);
-    z-index: 11; }
-
-.which-trump-headline {
-  font-family: "Bitter", serif;
-  font-weight: 600;
-  font-size: 5vw;
-  padding-bottom: 0.5em;
-  text-align: center; }
-
-.which-trump-desc {
-  font-family: "Quicksand", sans-serif;
-  color: #eee;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1em; }
-
-.trumps {
+.introduction {
+  min-height: 91.5vh;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-flex;
@@ -499,42 +396,239 @@ ul {
   -moz-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  -webkit-align-items: stretch;
-  align-items: stretch;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center; }
+  .introduction h1 {
+    font-family: "Bitter", serif;
+    font-weight: 600;
+    font-size: 6vw;
+    padding-bottom: 0.5em;
+    text-align: center; }
+  .introduction .desc {
+    max-width: 30em;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "Quicksand", sans-serif;
+    color: #eee;
+    font-size: 1.45em; }
+  .introduction p {
+    margin-bottom: 0.5em; }
+  .introduction .button-holder {
+    text-align: center; }
+    .introduction .button-holder button {
+      display: inline-block;
+      font-size: 1.25rem;
+      border: 1px solid #212121;
+      padding: 0.45em 1.25em;
+      cursor: pointer; }
+    .introduction .button-holder .button {
+      background: -webkit-radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%), -webkit-radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+      background: -o-radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%), -o-radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+      background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+      color: #eee;
+      text-shadow: 1px 1px 1px #212121, -1px -1px 1px #212121;
+      border-color: transparent;
+      background-position: center; }
+    .introduction .button-holder .button {
+      background: -webkit-linear-gradient(162deg, #452100, #ffde45 16%, #ffde45 21%, #ffffff 24%, #ffde45 36%, #ffffff 45%, #ffffff 60%, #ffde45 72%, #ffffff 80%, #ffde45 84%, #452100);
+      background: -o-linear-gradient(162deg, #452100, #ffde45 16%, #ffde45 21%, #ffffff 24%, #ffde45 36%, #ffffff 45%, #ffffff 60%, #ffde45 72%, #ffffff 80%, #ffde45 84%, #452100);
+      background: linear-gradient(-72deg, #452100, #ffde45 16%, #ffde45 21%, #ffffff 24%, #ffde45 36%, #ffffff 45%, #ffffff 60%, #ffde45 72%, #ffffff 80%, #ffde45 84%, #452100);
+      color: #212121;
+      text-shadow: 1px 1px 1px #eee;
+      font-weight: 600;
+      background-size: 100%;
+      -webkit-transition: background 0.3s ease;
+      -o-transition: background 0.3s ease;
+      transition: background 0.3s ease;
+      background-position: center; }
+      .introduction .button-holder .button:hover {
+        background-size: 130%; }
+      .introduction .button-holder .button:active {
+        background-size: 200%; }
+
+@media (max-width: 686px) {
+  .introduction h1 {
+    font-size: 12vw; }
+  .introduction .desc {
+    padding-left: 10px;
+    padding-right: 10px; } }
+
+.trumps a.avatar {
+  border-radius: 50%; }
+
+.which-trump-headline {
+  font-family: "Bitter", serif;
+  font-weight: 600;
+  padding-bottom: 0.5em;
+  text-align: center; }
+
+@media (min-width: 641px) {
+  .which-trump-headline {
+    font-size: 5vw; }
   .trumps a.avatar {
+    display: block;
     width: 15vw;
-    -webkit-flex-basis: 15vw;
-    -ms-flex-preferred-size: 15vw;
-    flex-basis: 15vw;
-    -webkit-box-flex: 0;
-    -webkit-flex-grow: 0;
-    -ms-flex-positive: 0;
-    flex-grow: 0;
-    -webkit-flex-shrink: 1;
-    -ms-flex-negative: 1;
-    flex-shrink: 1;
-    -webkit-align-self: auto;
-    -ms-flex-item-align: auto;
-    align-self: auto;
     height: 15vw;
     background-size: cover;
-    border-radius: 50%;
-    margin-right: 3.75vw;
-    margin-bottom: 3.75vw;
+    top: calc(50vh - 7.5vw);
+    left: calc(50vw - 7.5vw);
+    -webkit-box-shadow: 0 0 5px #212121;
+    box-shadow: 0 0 5px #212121;
     -webkit-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease; }
+    .trumps a.avatar.donald {
+      position: absolute;
+      -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+      transform: scale(1);
+      z-index: 10; }
+    .trumps a.avatar.ivanka {
+      position: absolute;
+      -webkit-transform: scale(0.9);
+      -ms-transform: scale(0.9);
+      transform: scale(0.9);
+      z-index: 9;
+      margin-left: 11.4vw;
+      margin-top: 3.9vw; }
+    .trumps a.avatar.donjr {
+      position: absolute;
+      -webkit-transform: scale(0.85);
+      -ms-transform: scale(0.85);
+      transform: scale(0.85);
+      z-index: 8;
+      margin-left: -7.65vw;
+      margin-top: 8.4vw; }
+    .trumps a.avatar.eric {
+      position: absolute;
+      -webkit-transform: scale(0.7);
+      -ms-transform: scale(0.7);
+      transform: scale(0.7);
+      z-index: 7;
+      margin-left: -9.9vw;
+      margin-top: -6.15vw; }
+    .trumps a.avatar.jared {
+      position: absolute;
+      -webkit-transform: scale(0.7);
+      -ms-transform: scale(0.7);
+      transform: scale(0.7);
+      z-index: 6;
+      margin-left: 17.4vw;
+      margin-top: -3.9vw; }
+    .trumps a.avatar.tiffany {
+      position: absolute;
+      -webkit-transform: scale(0.56);
+      -ms-transform: scale(0.56);
+      transform: scale(0.56);
+      z-index: 5;
+      margin-left: 2.4vw;
+      margin-top: 9.9vw; }
+    .trumps a.avatar.melania {
+      position: absolute;
+      -webkit-transform: scale(0.7);
+      -ms-transform: scale(0.7);
+      transform: scale(0.7);
+      z-index: 4;
+      margin-left: 4.35vw;
+      margin-top: -9.9vw; }
+    .trumps a.avatar.barron {
+      position: absolute;
+      -webkit-transform: scale(0.5);
+      -ms-transform: scale(0.5);
+      transform: scale(0.5);
+      z-index: 3;
+      margin-left: 0.9vw;
+      margin-top: -15.75vw; }
+    .trumps a.avatar.ivana {
+      position: absolute;
+      -webkit-transform: scale(0.47);
+      -ms-transform: scale(0.47);
+      transform: scale(0.47);
+      z-index: 2;
+      margin-left: -13.35vw;
+      margin-top: 0.975vw; }
     .trumps a.avatar:hover {
       -webkit-transform: scale(1.25);
       -ms-transform: scale(1.25);
       transform: scale(1.25);
-      z-index: 11; }
+      z-index: 11; } }
+
+@media (max-width: 640px) {
+  .pick-trump {
+    min-height: 91.5vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+  .which-trump-headline {
+    font-size: 8vw; }
+  .trumps {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    -webkit-align-items: stretch;
+    align-items: stretch;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px; }
+    .trumps a.avatar {
+      width: 30vw;
+      -webkit-flex-basis: 30vw;
+      -ms-flex-preferred-size: 30vw;
+      flex-basis: 30vw;
+      -webkit-box-flex: 0;
+      -webkit-flex-grow: 0;
+      -ms-flex-positive: 0;
+      flex-grow: 0;
+      -webkit-flex-shrink: 1;
+      -ms-flex-negative: 1;
+      flex-shrink: 1;
+      -webkit-align-self: auto;
+      -ms-flex-item-align: auto;
+      align-self: auto;
+      height: 30vw;
+      background-size: cover;
+      margin-bottom: 3vw; } }
 
 @-webkit-keyframes goldflex {
   0% {
@@ -555,32 +649,210 @@ ul {
 body {
   height: auto; }
 
-.password-screen {
+.password-screen .close-passwords {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background: transparent; }
+  .password-screen .close-passwords svg {
+    width: 2.7em;
+    height: 2.7em; }
+    .password-screen .close-passwords svg .outline {
+      opacity: 0; }
+    .password-screen .close-passwords svg * {
+      fill: #ee2a2a;
+      fill: #6f6f6f; }
+  .password-screen .close-passwords .fill {
+    opacity: 0; }
+  .password-screen .close-passwords:hover .fill {
+    opacity: 1; }
+  .password-screen .close-passwords:hover svg .x {
+    fill: #eee; }
+
+.password-screen .instruction-row .points {
+  color: #4885ed; }
+
+.password-screen .formbox {
+  padding-top: 2em;
+  padding-top: 1em;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  -webkit-align-items: stretch;
+  align-items: stretch;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+  .password-screen .formbox .error-msg {
+    color: #ee2a2a;
+    display: block;
+    padding-top: 0.25em;
+    font-family: "Quicksand", sans-serif;
+    font-size: 80%; }
+  .password-screen .formbox input.error {
+    border: 2px solid #ee2a2a; }
+  .password-screen .formbox .icon-holder {
+    -webkit-flex-basis: 100px;
+    -ms-flex-preferred-size: 100px;
+    flex-basis: 100px;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -webkit-flex-shrink: 1;
+    -ms-flex-negative: 1;
+    flex-shrink: 1;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+    padding-right: 1em;
+    padding-top: 2em; }
+    .password-screen .formbox .icon-holder img {
+      display: block;
+      width: 80px;
+      height: 80px; }
+  .password-screen .formbox .input-holder {
+    -webkit-flex-basis: calc(100% - 100px);
+    -ms-flex-preferred-size: calc(100% - 100px);
+    flex-basis: calc(100% - 100px);
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -webkit-flex-shrink: 1;
+    -ms-flex-negative: 1;
+    flex-shrink: 1;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    -webkit-align-items: stretch;
+    align-items: stretch; }
+
+.password-screen .username, .password-screen .password, .password-screen .card-number, .password-screen .buttons {
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-align-self: auto;
+  -ms-flex-item-align: auto;
+  align-self: auto; }
+
+.password-screen .expiration, .password-screen .cvc {
+  width: calc(50% - 10px);
+  -webkit-flex-basis: calc(50% - 10px);
+  -ms-flex-preferred-size: calc(50% - 10px);
+  flex-basis: calc(50% - 10px);
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-align-self: auto;
+  -ms-flex-item-align: auto;
+  align-self: auto; }
+
+.password-screen label {
+  margin-bottom: 1.25em; }
+  .password-screen label span {
+    display: block;
+    text-transform: uppercase;
+    padding-left: 1rem;
+    font-weight: 600; }
+  .password-screen label input {
+    width: 100%;
+    display: block;
+    font-size: 1.5rem;
+    padding: 0.25em 1rem;
+    border: none; }
+  .password-screen label.captcha-image {
+    margin-bottom: 0.5em;
+    width: 100%; }
+    .password-screen label.captcha-image img {
+      width: 100%; }
+
+.password-screen .buttons {
+  text-align: center;
+  padding-top: 1em; }
+  .password-screen .buttons button {
+    display: inline-block;
+    font-size: 1.25rem;
+    border: 1px solid #212121;
+    padding: 0.45em 1.25em;
+    cursor: pointer; }
+  .password-screen .buttons .skip {
+    margin-right: 1em; }
+  .password-screen .buttons .submit {
+    background: -webkit-radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%), -webkit-radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+    background: -o-radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%), -o-radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+    background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+    color: #eee;
+    text-shadow: 1px 1px 1px #212121, -1px -1px 1px #212121;
+    border-color: gold;
+    -webkit-animation-name: goldflex;
+    animation-name: goldflex;
+    -webkit-animation-duration: 9s;
+    animation-duration: 9s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    background-position: center; }
+  .password-screen .buttons button:hover {
+    -webkit-box-shadow: 2px 2px 2px #212121;
+    box-shadow: 2px 2px 2px #212121; }
+  .password-screen .buttons button:active {
+    -webkit-box-shadow: inset 2px 2px 2px #212121;
+    box-shadow: inset 2px 2px 2px #212121; }
+
+.screen {
   background-color: #eee;
   max-width: 460px;
-  margin: 2em auto;
+  margin: 4em auto;
   padding: 1em;
   position: relative;
   font-family: "Bitter", serif; }
-  .password-screen .close-passwords {
-    position: absolute;
-    top: 2px;
-    right: 2px;
-    border: none;
-    padding: 0;
-    cursor: pointer; }
-    .password-screen .close-passwords svg {
-      width: 2.7em;
-      height: 2.7em; }
-      .password-screen .close-passwords svg * {
-        fill: #ee2a2a; }
-    .password-screen .close-passwords .fill {
-      opacity: 0; }
-    .password-screen .close-passwords:hover .fill {
-      opacity: 1; }
-    .password-screen .close-passwords:hover svg .x {
-      fill: #eee; }
-  .password-screen .top-row {
+  .screen .top-row {
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-flex;
@@ -600,13 +872,20 @@ body {
     -webkit-align-items: stretch;
     align-items: stretch;
     margin-bottom: 1em; }
-    .password-screen .top-row figure.avatar {
-      width: 5rem;
-      height: 5rem;
-      border-radius: 50%;
-      background-size: cover;
-      background-position: center; }
-    .password-screen .top-row .welcome-text {
+    .screen .top-row .welcome-box {
+      -webkit-flex-basis: 5rem;
+      -ms-flex-preferred-size: 5rem;
+      flex-basis: 5rem;
+      -webkit-box-flex: 1;
+      -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+      flex-grow: 1;
+      -webkit-flex-shrink: 1;
+      -ms-flex-negative: 1;
+      flex-shrink: 1;
+      -webkit-align-self: auto;
+      -ms-flex-item-align: auto;
+      align-self: auto;
       display: -webkit-box;
       display: -webkit-flex;
       display: -moz-flex;
@@ -629,68 +908,10 @@ body {
       -webkit-justify-content: center;
       -ms-flex-pack: center;
       justify-content: center; }
-      .password-screen .top-row .welcome-text span {
-        padding-left: 0.4em;
-        font-size: 3em; }
-  .password-screen .instruction-row .points {
-    color: #4885ed; }
-  .password-screen .formbox {
-    padding-top: 2em;
-    padding-top: 1em;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: wrap;
-    -moz-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    -webkit-align-items: stretch;
-    align-items: stretch;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between; }
-    .password-screen .formbox .error-msg {
-      color: #ee2a2a;
-      display: block;
-      padding-top: 0.25em;
-      font-family: "Quicksand", sans-serif;
-      font-size: 80%; }
-    .password-screen .formbox input.error {
-      border: 2px solid #ee2a2a; }
-    .password-screen .formbox .icon-holder {
-      -webkit-flex-basis: 100px;
-      -ms-flex-preferred-size: 100px;
-      flex-basis: 100px;
-      -webkit-box-flex: 1;
-      -webkit-flex-grow: 1;
-      -ms-flex-positive: 1;
-      flex-grow: 1;
-      -webkit-flex-shrink: 1;
-      -ms-flex-negative: 1;
-      flex-shrink: 1;
-      -webkit-align-self: auto;
-      -ms-flex-item-align: auto;
-      align-self: auto;
-      padding-right: 1em;
-      padding-top: 2em; }
-      .password-screen .formbox .icon-holder img {
-        display: block;
-        width: 80px;
-        height: 80px; }
-    .password-screen .formbox .input-holder {
-      -webkit-flex-basis: calc(100% - 100px);
-      -ms-flex-preferred-size: calc(100% - 100px);
-      flex-basis: calc(100% - 100px);
+    .screen .top-row .welcome-text {
+      -webkit-flex-basis: calc(100% - 5rem);
+      -ms-flex-preferred-size: calc(100% - 5rem);
+      flex-basis: calc(100% - 5rem);
       -webkit-box-flex: 1;
       -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
@@ -715,90 +936,38 @@ body {
       -moz-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-      -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-      -webkit-align-items: stretch;
-      align-items: stretch; }
-  .password-screen .username, .password-screen .password, .password-screen .card-number, .password-screen .buttons {
-    -webkit-flex-basis: 100%;
-    -ms-flex-preferred-size: 100%;
-    flex-basis: 100%;
-    -webkit-box-flex: 1;
-    -webkit-flex-grow: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-    -webkit-flex-shrink: 1;
-    -ms-flex-negative: 1;
-    flex-shrink: 1;
-    -webkit-align-self: auto;
-    -ms-flex-item-align: auto;
-    align-self: auto; }
-  .password-screen .expiration, .password-screen .cvc {
-    width: calc(50% - 10px);
-    -webkit-flex-basis: calc(50% - 10px);
-    -ms-flex-preferred-size: calc(50% - 10px);
-    flex-basis: calc(50% - 10px);
-    -webkit-box-flex: 0;
-    -webkit-flex-grow: 0;
-    -ms-flex-positive: 0;
-    flex-grow: 0;
-    -webkit-flex-shrink: 1;
-    -ms-flex-negative: 1;
-    flex-shrink: 1;
-    -webkit-align-self: auto;
-    -ms-flex-item-align: auto;
-    align-self: auto; }
-  .password-screen label {
-    margin-bottom: 1.25em; }
-    .password-screen label span {
-      display: block;
-      text-transform: uppercase;
-      padding-left: 1rem;
-      font-weight: 600; }
-    .password-screen label input {
-      width: 100%;
-      display: block;
-      font-size: 1.5rem;
-      padding: 0.25em 1rem;
-      border: none; }
-    .password-screen label.captcha-image {
-      margin-bottom: 0.5em;
-      width: 100%; }
-      .password-screen label.captcha-image img {
-        width: 100%; }
-  .password-screen .buttons {
-    text-align: center;
-    padding-top: 1em; }
-    .password-screen .buttons button {
-      display: inline-block;
-      font-size: 1.25rem;
-      border: 1px solid #212121;
-      padding: 0.45em 1.25em;
-      cursor: pointer; }
-    .password-screen .buttons .skip {
-      margin-right: 1em; }
-    .password-screen .buttons .submit {
-      background: -webkit-radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%), -webkit-radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
-      background: -o-radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%), -o-radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
-      background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
-      color: #eee;
-      text-shadow: 1px 1px 1px #212121, -1px -1px 1px #212121;
-      border-color: gold;
-      -webkit-animation-name: goldflex;
-      animation-name: goldflex;
-      -webkit-animation-duration: 9s;
-      animation-duration: 9s;
-      -webkit-animation-timing-function: linear;
-      animation-timing-function: linear;
-      -webkit-animation-iteration-count: infinite;
-      animation-iteration-count: infinite;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-pack: left;
+      -webkit-justify-content: left;
+      -ms-flex-pack: left;
+      justify-content: left; }
+    .screen .top-row figure.avatar {
+      width: 5rem;
+      height: 5rem;
+      border-radius: 50%;
+      background-size: cover;
       background-position: center; }
-    .password-screen .buttons button:hover {
-      -webkit-box-shadow: 2px 2px 2px #212121;
-      box-shadow: 2px 2px 2px #212121; }
-    .password-screen .buttons button:active {
-      -webkit-box-shadow: inset 2px 2px 2px #212121;
-      box-shadow: inset 2px 2px 2px #212121; }
+    .screen .top-row .welcome-text span {
+      padding-left: 0.4em;
+      font-size: 3em; }
+  .screen p {
+    margin-bottom: 1em; }
+  .screen .blue {
+    color: #4885ed; }
+  .screen .bigger {
+    font-size: 125%; }
+
+@media (max-width: 450px) {
+  .screen {
+    margin-left: 10px;
+    margin-right: 10px; } }
 
 /* PNotify modules included in this custom build file:
 animate

@@ -1,12 +1,29 @@
 $serif: 'Bitter', serif;
 $sans: 'Quicksand', sans-serif;
+$min-height: 91.5vh;
 //$goldGradient: linear-gradient(top, rgba(213,173,109,1) 0%, rgba(213,173,109,1) 26%, rgba(226,186,120,1) 35%, rgba(163,126,67,1) 45%, rgba(145,112,59,1) 61%, rgba(213,173,109,1) 100%);
 $goldGradient: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+
+$goldGradientTwo: linear-gradient(
+    -72deg,
+    #452100,
+    #ffde45 16%,
+    #ffde45 21%,
+    #ffffff 24%,
+    #ffde45 36%,
+    #ffffff 45%,
+    #ffffff 60%,
+    #ffde45 72%,
+    #ffffff 80%,
+    #ffde45 84%,
+    #452100
+  );
+
 %goldText {  
   color:	#D5AD6D; /*if no support for background-clip*/
   background: -webkit-linear-gradient(transparent, transparent),
-    -webkit-linear-gradient(top, rgba(213,173,109,1) 0%, rgba(213,173,109,1) 26%, rgba(226,186,120,1) 35%, rgba(163,126,67,1) 45%, rgba(145,112,59,1) 61%, rgba(213,173,109,1) 100%);
+              -webkit-linear-gradient(top, rgba(213,173,109,1) 0%, rgba(213,173,109,1) 26%, rgba(226,186,120,1) 35%, rgba(163,126,67,1) 45%, rgba(145,112,59,1) 61%, rgba(213,173,109,1) 100%);
   background: -o-linear-gradient(transparent, transparent);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
 }

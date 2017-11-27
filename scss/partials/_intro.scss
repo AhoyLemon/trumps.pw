@@ -1,0 +1,25 @@
+.introduction { min-height: $min-height; @include flex-center();
+  h1 { font-family: $serif; font-weight: $bold; @extend %goldText; font-size:6vw; padding-bottom: 0.5em; text-align: center; }
+  .desc { max-width:30em; margin-left: auto; margin-right: auto; font-family: $sans; color:$white; font-size:1.45em; }
+  p { margin-bottom: 0.5em;}
+  .button-holder { text-align: center; 
+    button { display: inline-block; font-size: 1.25rem; border:1px solid $black; padding: 0.45em 1.25em; cursor: pointer; }
+    
+    .button { background:$goldGradient; color:$white; text-shadow: 1px 1px 1px $black, -1px -1px 1px $black; border-color:transparent; background-position: center; }
+    
+    .button { background:$goldGradientTwo; color:$black; text-shadow:1px 1px 1px $white; font-weight: $bold; background-size:100%; transition:background 0.3s ease; background-position: center;
+      &:hover { background-size:130%; }
+      &:active { background-size:200%; }
+    }
+    
+    
+    //button:active { box-shadow: inset 2px 2px 2px $black; }
+  }
+}
+
+@media (max-width:686px) {
+  .introduction {
+    h1 { font-size:12vw; }
+    .desc { padding-left: 10px; padding-right: 10px; }
+  }
+}

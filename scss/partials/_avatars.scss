@@ -4,28 +4,34 @@ $quarterSize: $picSize / 4;
 
 
 .trumps {
-  a.avatar { display:block; width:$picSize; height:$picSize; background-size:cover; border-radius: 50%;
-    top:calc(50vh - #{$halfSize}); left:calc(50vw - #{$halfSize}); box-shadow: 0 0 5px $black; transition:all 0.5s ease;
-    &.donald  { position: absolute; transform: scale(1);    z-index: 10; }
-    &.ivanka  { position: absolute; transform: scale(0.9);  z-index: 9; margin-left:($picSize * .76); margin-top:($picSize * .26); }
-    &.donjr   { position: absolute; transform: scale(0.85); z-index: 8; margin-left:-($picSize * .51); margin-top:($picSize * .56); }
-    &.eric    { position: absolute; transform: scale(0.7);  z-index: 7; margin-left:-($picSize * .66); margin-top:-($picSize * .41); }
-    &.jared   { position: absolute; transform: scale(0.7);  z-index: 6; margin-left:($picSize * 1.16); margin-top:-($picSize * .26); }
-    &.tiffany { position: absolute; transform: scale(0.56); z-index: 5; margin-left:($picSize * .16); margin-top:($picSize * .66); }
-    &.melania { position: absolute; transform: scale(0.7);  z-index: 4; margin-left:($picSize * .29); margin-top:-($picSize * .66); }
-    &.barron  { position: absolute; transform: scale(0.5);  z-index: 3; margin-left:($picSize * .06); margin-top:-($picSize * 1.05); }
-    &.ivana   { position: absolute; transform: scale(0.47); z-index: 2; margin-left:-($picSize * .89); margin-top:($picSize * .065); }
-    
-    &:hover { transform: scale(1.25); z-index: 11; }
-    
+  a.avatar { border-radius: 50%; }
+}
+
+.which-trump-headline { font-family: $serif; font-weight: $bold; @extend %goldText;  padding-bottom: 0.5em; text-align: center; }
+
+@media (min-width:641px) {
+  .which-trump-headline { font-size:5vw; }
+  .trumps {
+    a.avatar { display:block; width:$picSize; height:$picSize; background-size:cover; 
+      top:calc(50vh - #{$halfSize}); left:calc(50vw - #{$halfSize}); box-shadow: 0 0 5px $black; transition:all 0.5s ease;
+      &.donald  { position: absolute; transform: scale(1);    z-index: 10; }
+      &.ivanka  { position: absolute; transform: scale(0.9);  z-index: 9; margin-left:($picSize * .76); margin-top:($picSize * .26); }
+      &.donjr   { position: absolute; transform: scale(0.85); z-index: 8; margin-left:-($picSize * .51); margin-top:($picSize * .56); }
+      &.eric    { position: absolute; transform: scale(0.7);  z-index: 7; margin-left:-($picSize * .66); margin-top:-($picSize * .41); }
+      &.jared   { position: absolute; transform: scale(0.7);  z-index: 6; margin-left:($picSize * 1.16); margin-top:-($picSize * .26); }
+      &.tiffany { position: absolute; transform: scale(0.56); z-index: 5; margin-left:($picSize * .16); margin-top:($picSize * .66); }
+      &.melania { position: absolute; transform: scale(0.7);  z-index: 4; margin-left:($picSize * .29); margin-top:-($picSize * .66); }
+      &.barron  { position: absolute; transform: scale(0.5);  z-index: 3; margin-left:($picSize * .06); margin-top:-($picSize * 1.05); }
+      &.ivana   { position: absolute; transform: scale(0.47); z-index: 2; margin-left:-($picSize * .89); margin-top:($picSize * .065); }
+      &:hover { transform: scale(1.25); z-index: 11; }
+    }
   }
 }
 
-.which-trump-headline { font-family: $serif; font-weight: $bold; @extend %goldText; font-size:5vw; padding-bottom: 0.5em; text-align: center; }
-.which-trump-desc { font-family: $sans; color:$white; max-width: 800px; margin-left: auto; margin-right: auto; margin-bottom: 1em; }
-.trumps { @include flex-container(); justify-content: center;
-  a.avatar { @include flex-item($picSize,0); height: $picSize; background-size: cover; border-radius: 50%; margin-right: $quarterSize; margin-bottom: $quarterSize; transition:all 0.5s ease;
-    &:hover { transform: scale(1.25); z-index: 11; }
+@media (max-width:640px) {
+  .pick-trump { min-height: $min-height; @include flex-center(); }
+  .which-trump-headline { font-size:8vw; }
+  .trumps { @include flex-container(); justify-content: space-between; padding-left: 10px; padding-right: 10px;
+    a.avatar { @include flex-item(30vw,0); height: 30vw; background-size:cover; margin-bottom: 3vw; }
   }
 }
-

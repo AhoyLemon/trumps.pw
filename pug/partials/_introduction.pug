@@ -1,0 +1,18 @@
+.introduction(v-cloak v-if="phase == 'intro'")      
+  .inner
+    h1 Trump Family Passwords 
+    .desc 
+      p 
+        |  This is a site where members of the Trump family can 
+        i earn ponints
+        |  by entering in their passwords!
+      p 
+        | This 
+        i exclusive
+        |  and 
+        i amazing
+        |  web service is 
+        i only
+        |  for members of the Trump family.
+    .button-holder
+      button.button(v-on:click="phase = 'pickTrump'") I am a Trump

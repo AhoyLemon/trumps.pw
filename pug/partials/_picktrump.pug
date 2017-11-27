@@ -1,0 +1,5 @@
+.pick-trump(v-if="phase == 'pickTrump'" v-cloak)
+  .inner
+    h3.which-trump-headline Which Trump are you?
+    .trumps
+      a.avatar(v-for="trump in trumpFamily" v-bind:class="trump.class" v-bind:style="{ backgroundImage: 'url(img/profiles/600/' + trump.fileSrc + ')' }" v-on:click="trumpPicked(trump)")

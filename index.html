@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta http-equiv="last-modified" content="2017-10-26@16:00:10">
+    <meta http-equiv="last-modified" content="2017-10-27@16:02:06">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700|Quicksand">
-    <link href="css/trumps.css?lastUpdated=2017-10-26@16:00:10" rel="stylesheet">
+    <link href="css/trumps.css?lastUpdated=2017-10-27@16:02:06" rel="stylesheet">
     <!-- Twitter-->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:creator" content="@AhoyLemon">
@@ -55,93 +55,34 @@
       </button>
       <div class="sidebar" v-bind:class=" {visible: sidebarVisible} ">
         <ul>
-          <li><span class="label">This site is</span><span class="indent"><span>by </span><a href="http://ahoylemon.xyz" target="_blank" onclick="sendGA('outside link', 'site by Lemon', http://ahoylemon.xyz')">Lemon</a></span></li>
-          <li> <span class="label">The song is</span><span class="indent"><a href="https://www.youtube.com/watch?v=l5aZJBLAu1E" target="_blank" onclick="sendGA('outside link', 'It&amp;apos;s Raining Men', https://www.youtube.com/watch?v=l5aZJBLAu1E')">It's Raining Men</a></span><span class="indent"><span>by the Weather Girls</span></span></li>
-          <li><span class="label">The men are</span><span class="indent"><a href="https://github.com/AhoyLemon/dumb.men/blob/master/js/partials/_men.js" target="_blank" onclick="sendGA('outside link', 'list of men', 'https://github.com/AhoyLemon/dumb.men/blob/master/js/partials/_men.js')">listed here</a></span></li>
-          <li id="AddToHomeScreen" v-if="device"><span class="label">But first</span><span class="indent"> <a style="font-weight:bold;" v-on:click="addToHomescreen = true"><span v-if="(device == 'android') || (device == 'ios')">add to home screen</span><span v-else-if="(browser == 'ie') || (browser == 'edge')">pin to start</span><span v-else-if="device == 'chrome'">add to shelf</span><span v-else-if="browser == 'chrome'">add to desktop</span><span v-else-if="(device == 'mac') || (browser == 'firefox') || (browser == 'opera') || (browser == 'vivaldi')">bookmark this</span></a></span></li>
+          <li><span class="label">This site is</span><span class="indent"><span>by </span><a href="http://ahoylemon.xyz" target="_blank" onclick="sendGA('outside link', 'site by Lemon', http://ahoylemon.xyz')">Lemon</a></span><span class="indent" style="font-weight:400;"> and only meant for members of the Trump family. </span></li>
+          <li><span class="label">If you aren't a Trump, please send them a link to this website. And then</span><span class="indent"><span>play </span><a href="https://damn.dog" target="_blank" onclick="sendGA('outside link', 'damn.dog', https://damn.dog')">damn.dog</a></span><span class="indent"><span>or </span><a href="https://idiots.win" target="_blank" onclick="sendGA('outside link', 'idiots.win', https://idiots.win')">idiots.win</a></span><span class="indent"><span>or </span><a href="http://ahoylemon.xyz" target="_blank" onclick="sendGA('outside link', 'any of these', http://ahoylemon.xyz')">any of these</a>.</span></li>
         </ul>
       </div>
-      <div class="homescreen-help-holder" v-cloak v-if="addToHomescreen">
-        <div class="homescreen-help" v-bind:class=" { ios:iOScheck() } ">
-          <div class="help android-help" v-if="device == 'android'"><span>Tap the 
-              <svg class="kebab" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                <circle cx="53.6" cy="13.1" r="11.4"></circle>
-                <circle cx="53.6" cy="49.8" r="11.4"></circle>
-                <circle cx="53.6" cy="86.5" r="11.4"></circle>
-              </svg> icon up there 
-              <svg class="arrow arrow-up" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                <path d="M89.5 41.1L54.9 3c-1.4-1.6-3.9-1.6-5.3 0L15 41c-2.3 2.6 0 6.6 3.4 5.9l21-4.2v50.4c0 2 1.6 3.6 3.6 3.6h18.2c2 0 3.6-1.6 3.6-3.6V42.7l21.5 4.2c3.2.9 5.5-3.3 3.2-5.8z"></path>
-              </svg></span><span>Then choose <b>Add to Home Screen</b></span></div>
-          <div class="help ios-help" v-else-if="device == 'ios'"><span>Tap the
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                <path d="M41.7 18.1l9.5-9.5v52c0 1.3.9 2.2 2.2 2.2 1.3 0 2.2-.9 2.2-2.2v-52l9.5 9.5c.4.4.9.7 1.5.7.7 0 1.1-.2 1.5-.7.9-.9.9-2.2 0-3.1L54.9 1.8c-.2-.2-.4-.4-.7-.4-.4-.2-1.1-.2-1.8 0-.2.2-.4.2-.7.4L38.6 15c-.9.9-.9 2.2 0 3.1.9.9 2.2.9 3.1 0zm42.5 9.5H66.6V32h17.6v61.7H22.5V32h17.6v-4.4H22.5c-2.4 0-4.4 2-4.4 4.4v61.7c0 2.4 2 4.4 4.4 4.4h61.7c2.4 0 4.4-2 4.4-4.4V32c0-2.4-2-4.4-4.4-4.4z"></path>
-              </svg> icon below.</span><span>Then choose <b>Add To Home Screen</b></span></div>
-          <div class="help chrome-help" v-else-if="(browser == 'chrome')"><span v-if="device == 'mac'">Tap the 
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                <path d="M72.3 86.138c1.5-.2 2.6-1.6 2.4-3.2v-.1l-3.6-22 15.7-15.7c1.1-1.1 1.1-2.9 0-4-.4-.4-1-.7-1.6-.8l-21.8-3.4-9.9-19.9c-.7-1.4-2.4-2-3.8-1.3-.5.3-1 .7-1.2 1.3l-9.9 19.9-21.8 3.4c-1.5.2-2.6 1.7-2.3 3.2.1.6.4 1.1.8 1.6l15.7 15.7-3.6 22c-.3 1.5.8 3 2.3 3.3.6.1 1.2 0 1.8-.3l19.6-10.2 19.6 10.2c.4.2 1 .3 1.6.3zm-4-8l-15.9-8.3c-.8-.4-1.8-.4-2.6 0l-15.9 8.3 2.9-17.8c.1-.9-.2-1.8-.8-2.5l-12.8-12.7 17.7-2.7c.9-.1 1.7-.7 2.1-1.5l8.1-16.2 8.1 16.2c.4.8 1.2 1.4 2.1 1.5l17.7 2.7-12.8 12.7c-.6.6-.9 1.6-.8 2.5-.1 0 2.9 17.8 2.9 17.8z"></path>
-              </svg> icon.</span><span v-else>Tap the 
-              <svg class="kebab" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                <circle cx="53.6" cy="13.1" r="11.4"></circle>
-                <circle cx="53.6" cy="49.8" r="11.4"></circle>
-                <circle cx="53.6" cy="86.5" r="11.4"></circle>
-              </svg> up there. 
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                <path d="M89.5 41.1L54.9 3c-1.4-1.6-3.9-1.6-5.3 0L15 41c-2.3 2.6 0 6.6 3.4 5.9l21-4.2v50.4c0 2 1.6 3.6 3.6 3.6h18.2c2 0 3.6-1.6 3.6-3.6V42.7l21.5 4.2c3.2.9 5.5-3.3 3.2-5.8z"></path>
-              </svg></span><span v-if="device == 'windows'">Then choose <b>More tools</b> and <b>Add to desktop</b></span><span v-if="device == 'chrome'">Then choose <b>More tools </b>and <b>Add to shelf</b></span></div>
-          <div class="help safari-help" v-else-if="browser == 'safari'"><span> 
-              <svg class="arrow arrow-up" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                <path d="M89.5 41.1L54.9 3c-1.4-1.6-3.9-1.6-5.3 0L15 41c-2.3 2.6 0 6.6 3.4 5.9l21-4.2v50.4c0 2 1.6 3.6 3.6 3.6h18.2c2 0 3.6-1.6 3.6-3.6V42.7l21.5 4.2c3.2.9 5.5-3.3 3.2-5.8z"></path>
-              </svg> Tap the
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                <path d="M41.7 18.1l9.5-9.5v52c0 1.3.9 2.2 2.2 2.2 1.3 0 2.2-.9 2.2-2.2v-52l9.5 9.5c.4.4.9.7 1.5.7.7 0 1.1-.2 1.5-.7.9-.9.9-2.2 0-3.1L54.9 1.8c-.2-.2-.4-.4-.7-.4-.4-.2-1.1-.2-1.8 0-.2.2-.4.2-.7.4L38.6 15c-.9.9-.9 2.2 0 3.1.9.9 2.2.9 3.1 0zm42.5 9.5H66.6V32h17.6v61.7H22.5V32h17.6v-4.4H22.5c-2.4 0-4.4 2-4.4 4.4v61.7c0 2.4 2 4.4 4.4 4.4h61.7c2.4 0 4.4-2 4.4-4.4V32c0-2.4-2-4.4-4.4-4.4z"></path>
-              </svg> icon. </span><span>Then <b>Add Bookmark</b>.</span></div>
-          <div class="help edge-help" v-else-if="browser == 'edge'"><span>Tap the 
-              <svg xmlns="http://www.w3.org/2000/svg" width="96.1" height="22.8" viewBox="0 0 96.1 22.8">
-                <circle cx="84.7" cy="11.4" r="11.4"></circle>
-                <circle cx="48.1" cy="11.4" r="11.4"></circle>
-                <circle cx="11.4" cy="11.4" r="11.4"></circle>
-              </svg> icon up here 
-              <svg class="arrow arrow-up" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                <path d="M89.5 41.1L54.9 3c-1.4-1.6-3.9-1.6-5.3 0L15 41c-2.3 2.6 0 6.6 3.4 5.9l21-4.2v50.4c0 2 1.6 3.6 3.6 3.6h18.2c2 0 3.6-1.6 3.6-3.6V42.7l21.5 4.2c3.2.9 5.5-3.3 3.2-5.8z"></path>
-              </svg></span><span>Then choose <b>Pin this page to start.</b></span></div>
-          <div class="help firefox-help" v-else-if="browser == 'firefox'"><span>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                <path d="M89.5 41.1L54.9 3c-1.4-1.6-3.9-1.6-5.3 0L15 41c-2.3 2.6 0 6.6 3.4 5.9l21-4.2v50.4c0 2 1.6 3.6 3.6 3.6h18.2c2 0 3.6-1.6 3.6-3.6V42.7l21.5 4.2c3.2.9 5.5-3.3 3.2-5.8z"></path>
-              </svg> Tap the 
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                <path d="M72.3 86.138c1.5-.2 2.6-1.6 2.4-3.2v-.1l-3.6-22 15.7-15.7c1.1-1.1 1.1-2.9 0-4-.4-.4-1-.7-1.6-.8l-21.8-3.4-9.9-19.9c-.7-1.4-2.4-2-3.8-1.3-.5.3-1 .7-1.2 1.3l-9.9 19.9-21.8 3.4c-1.5.2-2.6 1.7-2.3 3.2.1.6.4 1.1.8 1.6l15.7 15.7-3.6 22c-.3 1.5.8 3 2.3 3.3.6.1 1.2 0 1.8-.3l19.6-10.2 19.6 10.2c.4.2 1 .3 1.6.3zm-4-8l-15.9-8.3c-.8-.4-1.8-.4-2.6 0l-15.9 8.3 2.9-17.8c.1-.9-.2-1.8-.8-2.5l-12.8-12.7 17.7-2.7c.9-.1 1.7-.7 2.1-1.5l8.1-16.2 8.1 16.2c.4.8 1.2 1.4 2.1 1.5l17.7 2.7-12.8 12.7c-.6.6-.9 1.6-.8 2.5-.1 0 2.9 17.8 2.9 17.8z"></path>
-              </svg> icon up there</span></div>
-          <div class="help opera-help" v-else-if="browser == 'opera'"><span>
-              <svg class="arrow arrow-up" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                <path d="M89.5 41.1L54.9 3c-1.4-1.6-3.9-1.6-5.3 0L15 41c-2.3 2.6 0 6.6 3.4 5.9l21-4.2v50.4c0 2 1.6 3.6 3.6 3.6h18.2c2 0 3.6-1.6 3.6-3.6V42.7l21.5 4.2c3.2.9 5.5-3.3 3.2-5.8z"></path>
-              </svg> Tap the 
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                <path d="M65.6 22.2c-5.1 0-10.3 1.9-14.1 5.8-3.9-3.9-9-5.8-14.1-5.8S27.2 24.1 23.3 28c-7.8 7.8-7.8 20.5 0 28.3l28.2 28.3 28.3-28.3c3.9-3.9 5.8-9 5.8-14.1S83.7 32 79.8 28.1c-3.9-4-9-5.9-14.2-5.9zm9.9 29.9l-24 24-24-24c-2.6-2.6-4.1-6.1-4.1-9.9 0-3.8 1.4-7.3 4.1-9.9 2.6-2.6 6.1-4.1 9.9-4.1 3.8 0 7.3 1.4 9.9 4.1l4.2 4.3 4.2-4.2c2.6-2.6 6.1-4.1 9.9-4.1s7.3 1.4 9.9 4.1c2.6 2.6 4.1 6.1 4.1 9.9s-1.4 7.1-4.1 9.8z"></path>
-              </svg> icon up there </span></div>
-          <div class="help vivaldi-help" v-else-if="browser == 'vivaldi'"><span>
-              <svg class="arrow arrow-up" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                <path d="M89.5 41.1L54.9 3c-1.4-1.6-3.9-1.6-5.3 0L15 41c-2.3 2.6 0 6.6 3.4 5.9l21-4.2v50.4c0 2 1.6 3.6 3.6 3.6h18.2c2 0 3.6-1.6 3.6-3.6V42.7l21.5 4.2c3.2.9 5.5-3.3 3.2-5.8z"></path>
-              </svg> Tap the bookmark icon up there.</span></div>
+      <div class="introduction" v-cloak v-if="phase == 'intro'">     
+        <div class="inner">
+          <h1>Trump Family Passwords </h1>
+          <div class="desc"> 
+            <p>
+                This is a site where members of the Trump family can <i>earn ponints</i> by entering in their passwords!</p>
+            <p>
+               This <i>exclusive</i> and <i>amazing</i> web service is <i>only</i> for members of the Trump family.</p>
+          </div>
           <div class="button-holder">
-            <button v-on:click="addToHomescreen = false, sidebarVisible = false"><span>Okay, did that.</span></button>
+            <button class="button" v-on:click="phase = 'pickTrump'">I am a Trump</button>
           </div>
         </div>
       </div>
-      <div class="introduction" v-cloak>
-        <div class="which-trump-desc" v-if="phase == 'intro'">
-          <p> <b>Note:</b> This is a site where members of the Trump family can <i>earn ponints</i> by entering in their passwords!</p>
-          <p> If you aren't a member of the Trump family, our terms of service violate you using this site and we'll sue you. Please inform all of the members of the Trump family that they can use this website to enter in all their passwords and<i> EARN POINTS!</i></p>
+      <div class="pick-trump" v-if="phase == 'pickTrump'" v-cloak>
+        <div class="inner">
+          <h3 class="which-trump-headline">Which Trump are you?</h3>
+          <div class="trumps"><a class="avatar" v-for="trump in trumpFamily" v-bind:class="trump.class" v-bind:style="{ backgroundImage: 'url(img/profiles/600/' + trump.fileSrc + ')' }" v-on:click="trumpPicked(trump)"></a></div>
         </div>
       </div>
-      <div class="pick-trump" v-if="phase == 'pickTrump'">
-        <h3 class="which-trump-headline">Which Trump are you?</h3>
-        <div class="trumps"><a class="avatar" v-for="trump in trumpFamily" v-bind:class="trump.class" v-bind:style="{ backgroundImage: 'url(img/profiles/600/' + trump.fileSrc + ')' }" v-on:click="trumpPicked(trump)"></a></div>
-      </div>
-      <div class="password-screen" v-cloak v-if="phase == 'enterPassword'">
+      <div class="password-screen screen" v-cloak v-if="phase == 'enterPassword'">
         <button class="close-passwords" v-on:click="phase = 'pickTrump'">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
             <circle class="fill" cx="50.6" cy="49.7" r="42"></circle>
-            <path class="outline" d="M50 96C24.6 96 4 75.4 4 50S24.6 4 50 4s46 20.6 46 46-20.6 46-46 46zm0-86.2C27.8 9.8 9.8 27.8 9.8 50s18 40.3 40.2 40.3S90.3 72.2 90.3 50 72.2 9.8 50 9.8z"></path>
             <path class="x" d="M70.3 69c0 1.3-.5 2.4-1.5 3.3-1 .9-2.1 1.4-3.4 1.4-1.3 0-2.4-.6-3.4-1.7L49.6 56.9 37 72.1c-1 1.1-2.1 1.7-3.4 1.7-1.2 0-2.3-.5-3.3-1.4-1-.9-1.5-2.1-1.5-3.3 0-1.1.4-2.1 1.2-3L43.5 50l-13-15.8c-.8-1-1.3-2-1.3-3 0-1.3.5-2.4 1.5-3.3 1-.9 2.1-1.4 3.3-1.4 1.3 0 2.5.6 3.4 1.7l12.1 14.6 12-14.6c1-1.1 2.1-1.7 3.4-1.7 1.2 0 2.3.5 3.3 1.4 1 .9 1.5 2.1 1.5 3.3 0 1.1-.4 2.1-1.2 3l-13 15.6L69 65.9c.9 1 1.3 2 1.3 3.1z"></path>
           </svg>
         </button>
@@ -180,7 +121,7 @@
             <div class="icon-box" v-if="round.type.icon"><img :src="'svg/logo/'+round.type.icon"></div>
           </div>
           <form class="input-holder" v-on:submit.prevent="roundSubmit">
-            <label class="captcha-image"><img src="img/captcha/resign.jpg"></label>
+            <label class="captcha-image"><img :src="'img/captcha/'+round.img"></label>
             <label class="password">
               <input type="text" v-model="round.password" v-bind:class="{error: errors.password}" v-focus>
               <div class="error-msg password-error" v-show="errors.password" v-html="errors.password"></div>
@@ -211,14 +152,15 @@
               <input type="tel" v-mask="'(###) ###-####'" placeholder="(###) ###-####" v-model="round.username" v-bind:class="{error: errors.username}" v-focus>
               <div class="error-msg username-error" v-if="errors.username" v-html="errors.username"></div>
             </label>
-            <label class="username" v-else><span>Username</span>
+            <label class="username" v-else><span v-if="round.loginType" v-text="round.loginType"></span><span v-else>Username</span>
               <!--input(v-if="round.username" type="text" v-model="round.username")-->
-              <input type="text" v-model="round.username" v-focus>
+              <input v-if="round.type.name == 'Twitter'" type="text" v-model="round.username">
+              <input v-else type="text" v-model="round.username" v-focus>
               <div class="error-msg username-error" v-if="errors.username" v-html="errors.username"></div>
             </label>
             <label class="password"><span v-if="round.passwordType">{{round.passwordType}}</span><span v-else>Password</span>
               <input v-if="round.passwordType == 'PIN'" v-model="round.password" v-mask="'########'" v-bind:class="{error: errors.password}">
-              <input v-else-if="round.loginType == 'password only'" v-model="round.password" v-bind:class="{error: errors.password}" v-focus>
+              <input v-else-if="round.loginType == 'password only' || round.type.name == 'Twitter'" v-model="round.password" v-bind:class="{error: errors.password}" v-focus>
               <input v-else type="text" v-model="round.password" v-bind:class="{error: errors.password}">
               <div class="error-msg password-error" v-show="errors.password" v-html="errors.password"></div>
             </label>
@@ -227,6 +169,18 @@
               <button class="submit" v-on:click="roundSubmit()">Redeem</button>
             </div>
           </div>
+        </div>
+      </div>
+      <div class="game-over screen" v-if="phase == 'gameOver'" v-cloak>
+        <div class="top-row">
+          <div class="welcome-box">
+            <figure class="avatar" v-bind:style="{backgroundImage:'url('+my.avatar+')'}"></figure>
+          </div>
+          <div class="welcome-text"><span>Great job, {{my.name}}!</span></div>
+        </div>
+        <div class="instruction-row">
+          <p>{{my.name}}, You've just earned <strong class="blue bigger">{{my.points}} points</strong> from this exciting system. These points can be redeemed for <i>exciting prizes</i> once we verify that all the passwords are working.</p>
+          <p>In the meantime {{my.name}}, please inform the rest of your family about this <i>tremendous</i> system, which is <i>only</i> for members of the Trump family!</p>
         </div>
       </div>
     </main>
@@ -244,7 +198,7 @@
         //Vue.directive('mask', VueMask.VueMaskDirective);
         
       </script>
-      <script src="js/min/trumps.min.js?lastUpdated=2017-10-26@16:00:10"></script>
+      <script src="js/min/trumps.min.js?lastUpdated=2017-10-27@16:02:06"></script>
       <script>
         //------ Pnotify settings & defaults ----------------
         //PNotify.prototype.options.stack.firstpos1 = 85;

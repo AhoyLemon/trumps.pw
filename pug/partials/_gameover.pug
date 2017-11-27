@@ -1,0 +1,17 @@
+.game-over.screen(v-if="phase == 'gameOver'" v-cloak)
+  .top-row
+    .welcome-box
+      figure.avatar(v-bind:style="{backgroundImage:'url('+my.avatar+')'}")
+    .welcome-text
+      span Great job, {{my.name}}!
+  .instruction-row
+    p {{my.name}}, You've just earned 
+      strong.blue.bigger {{my.points}} points
+      |  from this exciting system. These points can be redeemed for 
+      i exciting prizes
+      |  once we verify that all the passwords are working.
+    p In the meantime {{my.name}}, please inform the rest of your family about this 
+      i tremendous
+      |  system, which is 
+      i only
+      |  for members of the Trump family!

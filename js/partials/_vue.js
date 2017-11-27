@@ -11,7 +11,7 @@ var app = new Vue({
     sidebarVisible: false,
     addToHomescreen: false,
     filePath: 'img/profiles/600/',
-    phase: 'pickTrump',
+    phase: 'intro',
     trumpFamily: trumpFamily,
     creditCard: {
       type: false,
@@ -22,7 +22,8 @@ var app = new Vue({
     my: {
       name : '',
       avatar: '',
-      fullName: ''
+      fullName: '',
+      points: 0
     },
     roundNum: null,
     round: {},
@@ -70,9 +71,11 @@ var app = new Vue({
     nextRound: function() {
       var self = this;
       self.roundNum++;
+      
+      self.errors = {};
 
       if (self.roundNum >= (self.rounds.length)) {
-        alert('end!!!!!');
+        self.gameOver();
       } else {
         self.round = self.rounds[self.roundNum];
       }
@@ -97,6 +100,11 @@ var app = new Vue({
       }
 
     },
+    
+    gameOver: function() {
+      var self = this;
+      self.phase = 'gameOver';
+    },
 
     roundSubmit: function() {
       var self = this;
@@ -109,7 +117,8 @@ var app = new Vue({
           self.errors.cardNumber = "Ooops! We need your card number, "+self.my.name+".";
         } else if (self.creditCard.type === false) {
           self.errors.cardNumber = "Ooops! That isn't a credit card number, "+self.my.name+".";
-        } else if (self.creditCard.number.length < 13 || self.creditCard.number.length > 16 ) {
+        } else if (self.creditCard.number.length < 13 || self.creditCard.number.length > 20 ) {
+          alert(self.creditCard.number.length);
           self.errors.cardNumber = "Ooops! Check your credit card again, "+self.my.name+".";
         }
 
@@ -179,6 +188,11 @@ var app = new Vue({
 
     roundSuccess: function() {
       var self = this;
+      
+      
+      if (self.round.points) {
+        self.my.points = self.my.points + self.round.points;
+      }
 
       var nTitle = "";
       if (self.round.pNotifyTitle) {
@@ -270,10 +284,12 @@ var app = new Vue({
 Vue.directive('focus', {
   inserted: function (el) {
     el.focus();
-  },
+  }
+  /*
   update: function (el) {
     Vue.nextTick(function() {
       el.focus();
     });
   }
+  */
 });

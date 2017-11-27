@@ -22,7 +22,7 @@
   }
 }
 
-.sidebar { @include position(fixed,0,0); background: $sidebar; color:$black; width: 14em; padding:$header-height 1rem 1rem 1rem; z-index: $z-sidebar; font-family: 'Zilla Slab', serif; font-size:20px;
+.sidebar { @include position(fixed,0,0); background: $sidebar; color:$black; width: 14em; padding:$header-height 1rem 1rem 1rem; z-index: $z-sidebar; font-family: $serif; font-size:18px;
   ul { padding: 0; }
   li { margin-bottom: 0.65em; list-style: none; }
   .label { display: block; line-height: 145% }

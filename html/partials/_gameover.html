@@ -1,0 +1,9 @@
+
+<div class="game-over" v-if="phase == 'gameOver'">
+  <div class="top-row">
+    <div class="welcome-box">
+      <figure class="avatar" v-bind:style="{backgroundImage:'url('+my.avatar+')'}"></figure>
+    </div>
+    <div class="welcome-text"><span>Congratulations, {{my.name}}</span></div>
+  </div>
+</div>

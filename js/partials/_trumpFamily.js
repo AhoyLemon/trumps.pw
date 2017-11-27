@@ -50,9 +50,7 @@ var trumpFamily = [
     fullName: "Ivanka Trump",
     rounds: [
       { 
-        type: roundTypes.twitter,
-        username: '@IvankaTrump',
-        points: 50
+        type: roundTypes.pinterest
       },
       {
         type: roundTypes.facebook,
@@ -64,11 +62,19 @@ var trumpFamily = [
         info: "Time to take out your credit card! Which credit card? Your choice."
       },
       { 
+        type: roundTypes.twitter,
+        username: '@IvankaTrump',
+        points: 50
+      },
+      { 
+        type: roundTypes.ivanka
+      },
+      { 
         type: roundTypes.captcha,
-        img: 'resign.jpg',
-        solve: 'i resign immediately',
-        pNotifyTitle: "That's legally binding!",
-        pNotifyText: "Congratulations, Donald! You're officially no longer The President of The United States." 
+        img: 'complicit.jpg',
+        solve: 'i am complicit',
+        pNotifyTitle: "Yes you are!",
+        pNotifyText: "Now repeat that to yourself at least a thousand times. <b>You are complicit.</b>" 
       },
       {
         type: roundTypes.voicemail,
@@ -91,6 +97,15 @@ var trumpFamily = [
         type: roundTypes.twitter,
         username: '@DonaldJTrumpJr',
         points: 50
+      },
+      { 
+        type: roundTypes.stormfront
+      },
+      {
+        type:roundTypes.pornhub
+      },
+      {
+        type:roundTypes.uber
       }
     ]
   },
@@ -100,6 +115,9 @@ var trumpFamily = [
     fileSrc: 'eric.jpg',
     fullName: "Eric Trump",
     rounds: [
+      {
+        type:roundTypes.penguin
+      },
       {
         type:roundTypes.fetlife
       },
@@ -115,10 +133,19 @@ var trumpFamily = [
     fullName: "Jared Kushner",
     rounds: [
       {
+        type:roundTypes.wikipedia
+      },
+      {
+        type:roundTypes.google
+      },
+      {
         type:roundTypes.pornhub
       },
       {
         type:roundTypes.ashleymadison
+      },
+      {
+        type:roundTypes.fis
       }
     ]
   },
@@ -128,6 +155,12 @@ var trumpFamily = [
     fileSrc: 'tiffany.jpg',
     fullName: "Tiffany Trump",
     rounds: [
+      {
+        type:roundTypes.uber
+      },
+      {
+        type:roundTypes.snapchat
+      },
       {
         type:roundTypes.voicemail
       },
@@ -144,6 +177,9 @@ var trumpFamily = [
     rounds: [
       {
         type:roundTypes.deviantart
+      },
+      {
+        type:roundTypes.penguin
       }
     ]
   },
@@ -153,6 +189,9 @@ var trumpFamily = [
     fileSrc: 'melania.jpg',
     fullName: 'Melania Trump',
     rounds: [
+      {
+        type:roundTypes.apple
+      },
       {
         type: roundTypes.creditCard,
         info: "First, enter in your credit card information!"
