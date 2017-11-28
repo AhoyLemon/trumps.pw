@@ -81,6 +81,11 @@ var roundTypes = {
     icon: 'google.svg',
     points: 60
   },
+  instagram: {
+    name: "Instagram",
+    icon: 'instagram.svg',
+    points: 30
+  },
   ivanka: {
     name: "Ivanka Trump HQ",
     loginType: 'email',

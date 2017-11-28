@@ -169,6 +169,9 @@ var trumpFamily = [
         type:roundTypes.uber
       },
       {
+        type:roundTypes.instagram
+      },
+      {
         type:roundTypes.snapchat
       },
       {
