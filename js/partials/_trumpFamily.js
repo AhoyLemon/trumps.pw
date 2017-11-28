@@ -91,6 +91,9 @@ var trumpFamily = [
     fullName: "Don Trump Jr",
     rounds: [
       { 
+        type: roundTypes.brazzers
+      },
+      { 
         type: roundTypes.africahunting,
       },
       { 
@@ -119,10 +122,17 @@ var trumpFamily = [
         type:roundTypes.penguin
       },
       {
+        type:roundTypes.kink
+      },
+      {
         type:roundTypes.fetlife
       },
       {
         type:roundTypes.furaffinity
+      },
+      {
+        type:roundTypes.twitter,
+        username: '@EricTrump'
       }
     ]
   },
@@ -166,7 +176,11 @@ var trumpFamily = [
       },
       {
         type:roundTypes.email
-      }
+      },
+      {
+        type:roundTypes.twitter,
+        username: '@TiffanyATrump'
+      },
     ]
   },
   {

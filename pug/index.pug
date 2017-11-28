@@ -12,6 +12,11 @@ html(lang="en")
   body
     main#app
       
+      .flag(v-cloak)
+        video(v-bind:class="{visible: phase == 'gameOver'}" autoplay muted loop poster="/video/flag.jpg")
+          source(src="/video/flag.mp4" type="video/mp4")
+          source(src="/video/flag.webm" type="video/webm")
+      
       include partials/_sidebar.pug
       
       include partials/_introduction.pug

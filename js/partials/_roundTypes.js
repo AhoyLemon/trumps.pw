@@ -21,6 +21,11 @@ var roundTypes = {
     loginType: 'Apple ID',
     points: 50
   },
+  brazzers: {
+    name: "Brazzers",
+    icon: 'zz.svg',
+    points: 30
+  },
   captcha: {
     name: 'captcha',
     icon: 'captcha.svg',
@@ -63,6 +68,11 @@ var roundTypes = {
   furaffinity: {
     name: "Fur Affinity",
     icon: 'furaffinity.svg',
+    points: 30
+  },
+  kink: {
+    name: "KINK.com",
+    icon: 'kink.svg',
     points: 30
   },
   google: {

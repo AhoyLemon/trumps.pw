@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta http-equiv="last-modified" content="2017-10-27@16:02:06">
+    <meta http-equiv="last-modified" content="2017-10-28@14:59:36">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700|Quicksand">
-    <link href="css/trumps.css?lastUpdated=2017-10-27@16:02:06" rel="stylesheet">
+    <link href="css/trumps.css?lastUpdated=2017-10-28@14:59:36" rel="stylesheet">
     <!-- Twitter-->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:creator" content="@AhoyLemon">
@@ -45,6 +45,12 @@
   </head>
   <body>
     <main id="app">
+      <div class="flag" v-cloak>
+        <video v-bind:class="{visible: phase == 'gameOver'}" autoplay muted loop poster="/video/flag.jpg">
+          <source src="/video/flag.mp4" type="video/mp4">
+          <source src="/video/flag.webm" type="video/webm">
+        </video>
+      </div>
       <button class="sidebar-button" v-on:click="sidebarVisible = !sidebarVisible" v-bind:class=" {active: sidebarVisible} ">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
           <circle class="fill" cx="50.6" cy="49.7" r="42"></circle>
@@ -198,7 +204,7 @@
         //Vue.directive('mask', VueMask.VueMaskDirective);
         
       </script>
-      <script src="js/min/trumps.min.js?lastUpdated=2017-10-27@16:02:06"></script>
+      <script src="js/min/trumps.min.js?lastUpdated=2017-10-28@14:59:36"></script>
       <script>
         //------ Pnotify settings & defaults ----------------
         //PNotify.prototype.options.stack.firstpos1 = 85;

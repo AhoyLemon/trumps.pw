@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Instagram" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 600 600" style="enable-background:new 0 0 600 600;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#SVGID_1_);}
+	.st1{fill:#FFFFFF;}
+</style>
+<g>
+	<g>
+		<radialGradient id="SVGID_1_" cx="179.6234" cy="587.9874" r="582.5576" gradientUnits="userSpaceOnUse">
+			<stop  offset="0" style="stop-color:#FFD776"/>
+			<stop  offset="0.2463" style="stop-color:#F3A554"/>
+			<stop  offset="0.3793" style="stop-color:#F15C3C"/>
+			<stop  offset="0.5394" style="stop-color:#D94867"/>
+			<stop  offset="0.6995" style="stop-color:#C32F87"/>
+			<stop  offset="0.9122" style="stop-color:#7D63A7"/>
+			<stop  offset="0.9852" style="stop-color:#5C6CB3"/>
+		</radialGradient>
+		<path class="st0" d="M589.5,463.1c0,69.8-56.3,126.3-125.7,126.3H137.4c-69.4,0-125.7-56.6-125.7-126.3v-324
+			C11.7,69.3,68,12.7,137.4,12.7h326.4c69.4,0,125.7,56.6,125.7,126.3V463.1z"/>
+	</g>
+	<path class="st1" d="M374.1,518.3H225.4c-74.6,0-135.7-61.1-135.7-135.7V222.3c0-74.6,61.1-135.7,135.7-135.7h148.7
+		c74.6,0,135.7,61.1,135.7,135.7v160.2C509.8,457.2,448.7,518.3,374.1,518.3z M387.6,486c23.9,0,46.4-9.4,63.5-26.4
+		s26.4-39.6,26.4-63.5V208.8c0-23.9-9.4-46.4-26.4-63.5s-39.6-26.4-63.5-26.4H211.9c-23.9,0-46.4,9.4-63.5,26.4S122,185,122,208.8
+		V396c0,23.9,9.4,46.4,26.4,63.5S188,486,211.9,486H387.6z"/>
+	<path class="st1" d="M416.1,300.8c0,63.9-51.8,115.7-115.7,115.7s-115.7-51.8-115.7-115.7s51.8-115.7,115.7-115.7
+		S416.1,236.9,416.1,300.8z M299.8,225.1c-41.8,0-75.8,33.9-75.8,75.8s33.9,75.8,75.8,75.8s75.8-33.9,75.8-75.8
+		S341.7,225.1,299.8,225.1z"/>
+	<circle class="st1" cx="417.9" cy="183.3" r="27.4"/>
+</g>
+</svg>
