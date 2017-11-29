@@ -649,29 +649,6 @@ ul {
 body {
   height: auto; }
 
-.password-screen .close-passwords {
-  position: absolute;
-  top: 2px;
-  right: 2px;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  background: transparent; }
-  .password-screen .close-passwords svg {
-    width: 2.7em;
-    height: 2.7em; }
-    .password-screen .close-passwords svg .outline {
-      opacity: 0; }
-    .password-screen .close-passwords svg * {
-      fill: #ee2a2a;
-      fill: #6f6f6f; }
-  .password-screen .close-passwords .fill {
-    opacity: 0; }
-  .password-screen .close-passwords:hover .fill {
-    opacity: 1; }
-  .password-screen .close-passwords:hover svg .x {
-    fill: #eee; }
-
 .password-screen .instruction-row .points {
   color: #4885ed; }
 
@@ -852,6 +829,28 @@ body {
   padding: 1em;
   position: relative;
   font-family: "Bitter", serif; }
+  .screen .close-button {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    background: transparent; }
+    .screen .close-button svg {
+      width: 2.7em;
+      height: 2.7em; }
+      .screen .close-button svg .outline {
+        opacity: 0; }
+      .screen .close-button svg * {
+        fill: #ee2a2a;
+        fill: #6f6f6f; }
+    .screen .close-button .fill {
+      opacity: 0; }
+    .screen .close-button:hover .fill {
+      opacity: 1; }
+    .screen .close-button:hover svg .x {
+      fill: #eee; }
   .screen .top-row {
     display: -webkit-box;
     display: -webkit-flex;
@@ -992,6 +991,40 @@ body {
 
 .flag video.visible {
   opacity: 1; }
+
+.game-over .start-over {
+  color: #ee2a2a;
+  font-weight: 600; }
+  .game-over .start-over:hover {
+    text-decoration: underline; }
+
+.game-over .button-holder {
+  text-align: center; }
+
+.game-over .button {
+  display: inline-block;
+  font-size: 1.25rem;
+  border: 1px solid #212121;
+  padding: 0.45em 1.25em;
+  cursor: pointer; }
+
+.game-over .button {
+  background: -webkit-radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%), -webkit-radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+  background: -o-radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%), -o-radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+  background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+  color: #eee;
+  text-shadow: 1px 1px 1px #212121, -1px -1px 1px #212121;
+  border-color: gold;
+  -webkit-animation-name: goldflex;
+  animation-name: goldflex;
+  -webkit-animation-duration: 9s;
+  animation-duration: 9s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  background-position: center;
+  text-decoration: none; }
 
 /* PNotify modules included in this custom build file:
 animate

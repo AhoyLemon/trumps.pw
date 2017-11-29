@@ -1,10 +1,18 @@
 .game-over.screen(v-if="phase == 'gameOver'" v-cloak)
+
+  button.close-button(v-on:click="phase = 'pickTrump'")
+    svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100")
+      circle.fill(cx="50.6" cy="49.7" r="42")
+      //-path.outline(d="M50 96C24.6 96 4 75.4 4 50S24.6 4 50 4s46 20.6 46 46-20.6 46-46 46zm0-86.2C27.8 9.8 9.8 27.8 9.8 50s18 40.3 40.2 40.3S90.3 72.2 90.3 50 72.2 9.8 50 9.8z")
+      path.x(d="M70.3 69c0 1.3-.5 2.4-1.5 3.3-1 .9-2.1 1.4-3.4 1.4-1.3 0-2.4-.6-3.4-1.7L49.6 56.9 37 72.1c-1 1.1-2.1 1.7-3.4 1.7-1.2 0-2.3-.5-3.3-1.4-1-.9-1.5-2.1-1.5-3.3 0-1.1.4-2.1 1.2-3L43.5 50l-13-15.8c-.8-1-1.3-2-1.3-3 0-1.3.5-2.4 1.5-3.3 1-.9 2.1-1.4 3.3-1.4 1.3 0 2.5.6 3.4 1.7l12.1 14.6 12-14.6c1-1.1 2.1-1.7 3.4-1.7 1.2 0 2.3.5 3.3 1.4 1 .9 1.5 2.1 1.5 3.3 0 1.1-.4 2.1-1.2 3l-13 15.6L69 65.9c.9 1 1.3 2 1.3 3.1z")
+
   .top-row
     .welcome-box
       figure.avatar(v-bind:style="{backgroundImage:'url('+my.avatar+')'}")
     .welcome-text
-      span Great job, {{my.name}}!
-  .instruction-row
+      span(v-if="my.points") Great job, {{my.name}}!
+      span(v-else) Thanks, {{my.name}}
+  .instruction-row(v-if="my.points > 0")
     p {{my.name}}, You've just earned 
       strong.blue.bigger {{my.points}} points
       |  from this exciting system. These points can be redeemed for 
@@ -15,3 +23,18 @@
       |  system, which is 
       i only
       |  for members of the Trump family!
+  .instruction-row(v-else)
+    p Unfortunately, you 
+      strong.blue didn't earn any points 
+      |  from our exclusive website because you didn't enter in any passwords.
+    p If you can remember some of your passwords, you can 
+      a.start-over(v-on:click="startOver") start over
+      |  and earn some points.
+    p Otherwise, tell the rest of your family to use this 
+      i exclusive
+      |  website to 
+      i  earn points 
+      |  by entering passwords.
+  .instruction-row
+    p.button-holder
+      a.button(href="https://twitter.com/intent/tweet?url=http%3A%2F%2Ftrumps.pw&text=This%20exclusive%20website%20is%20where%20members%20of%20the%20Trump%20family%20can%20earn%20points%20by%20entering%20passwords.") Share on Twitter

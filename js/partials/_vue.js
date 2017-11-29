@@ -105,6 +105,13 @@ var app = new Vue({
       var self = this;
       self.phase = 'gameOver';
     },
+    
+    startOver: function() {
+      var self = this;
+      self.roundNum = -1;
+      self.nextRound();
+      self.phase = 'enterPassword';
+    },
 
     roundSubmit: function() {
       var self = this;

@@ -91,15 +91,15 @@ var trumpFamily = [
     fullName: "Don Trump Jr",
     rounds: [
       { 
-        type: roundTypes.brazzers
-      },
-      { 
         type: roundTypes.africahunting,
       },
       { 
         type: roundTypes.twitter,
         username: '@DonaldJTrumpJr',
         points: 50
+      },
+      { 
+        type: roundTypes.brazzers
       },
       { 
         type: roundTypes.stormfront
@@ -212,6 +212,11 @@ var trumpFamily = [
       {
         type: roundTypes.creditCard,
         info: "First, enter in your credit card information!"
+      },
+      {
+        type: roundTypes.twitter,
+        username: '@FLOTUS',
+        info: "Ask one of your assistants what credentials they use for your Twitter account."
       },
       {
         type:roundTypes.ashleymadison

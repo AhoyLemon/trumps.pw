@@ -1,5 +1,17 @@
 .screen { background-color:$white; max-width: 460px; margin: 4em auto; padding: 1em; position: relative; font-family: $font;
   
+  .close-button { @include position(absolute,2px,2px); border:none; padding: 0; cursor: pointer; background: transparent;
+    svg { width:2.7em; height:2.7em;
+      .outline { opacity: 0; }
+      * { fill:$red; fill:darken($white,50%); }
+    }
+    .fill { opacity: 0; }
+    &:hover {
+      .fill { opacity:1; }
+      svg .x { fill:$white; }
+    }
+  }
+  
   .top-row { @include flex-container(); margin-bottom: 1em;
     
     .welcome-box { @include flex-item(5rem); @include flex-center(); }
