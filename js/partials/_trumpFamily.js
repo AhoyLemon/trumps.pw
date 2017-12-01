@@ -6,7 +6,6 @@ var trumpFamily = [
     fileSrc: 'donald.jpg',
     fullName: "Donald J. Trump",
     rounds: [
-      
       { 
         type: roundTypes.maralago,
       },
@@ -38,6 +37,7 @@ var trumpFamily = [
         type: roundTypes.captcha,
         img: 'resign.jpg',
         solve: 'i resign immediately',
+        countLabel: "Times Resigned",
         pNotifyTitle: "That's legally binding!",
         pNotifyText: "Congratulations, Donald! You're officially no longer The President of The United States." 
       }
@@ -73,6 +73,7 @@ var trumpFamily = [
         type: roundTypes.captcha,
         img: 'complicit.jpg',
         solve: 'i am complicit',
+        countLabel: 'recognized complicity', 
         pNotifyTitle: "Yes you are!",
         pNotifyText: "Now repeat that to yourself at least a thousand times. <b>You are complicit.</b>" 
       },

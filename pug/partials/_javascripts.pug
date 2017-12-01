@@ -4,33 +4,39 @@
     script(src="js/libraries/vue.full.js")
   else
     script(src="js/libraries/vue.min.js")
+    
+  //- Firebase  
+  script(src="https://cdn.jsdelivr.net/vuefire/1.0.0/vuefire.min.js")
+  script(src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js")
+
+  //- Libraries
   script(src="js/libraries/vuemask.min.js")
   script(src="https://cdnjs.cloudflare.com/ajax/libs/vue-focus/2.1.0/vue-focus.min.js")
   script(src="js/libraries/pnotify.custom.min.js")
   script.
     // As a plugin
     Vue.use(VueMask.VueMaskPlugin);
+    Vue.use(VueFire);
 
     // As a directive
     //Vue.directive('mask', VueMask.VueMaskDirective);
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBcOUvpUVZyu4IRcohETZyJlowW7l-5oro",
+      authDomain: "trumps-pw.firebaseapp.com",
+      databaseURL: "https://trumps-pw.firebaseio.com",
+      projectId: "trumps-pw",
+      storageBucket: "trumps-pw.appspot.com",
+      messagingSenderId: "296029786638"
+    };
+    var firebaseApp = firebase.initializeApp(config)
+    var db = firebaseApp.database();
+    var trumpsDb = db.ref('trumps');
   
   script(src="js/min/trumps.min.js?lastUpdated="+lastUpdated)
   script.
     //------ Pnotify settings & defaults ----------------
-    //PNotify.prototype.options.stack.firstpos1 = 85;
-    //PNotify.prototype.options.stack.firstpos2 = 5;
-    //PNotify.prototype.options.width = '120px';
-    //PNotify.prototype.options.delay = 4000;
-    //PNotify.prototype.options.history.menu = true;
-    //PNotify.prototype.options.nonblock = true;
-    //PNotify.prototype.nonblock.nonblock = true;
-    //PNotify.prototype.options.icon = false;
-    //PNotify.prototype.options.stack = { "dir1": "down", "dir2": "right", "firstpos1": ($(window).height() - 150), "firstpos2": 30 }
-    //PNotify.prototype.options.stack = {"dir1": "right", "dir2": "up", "push": "top"};
-    //PNotify.prototype.options.type = "info";
     PNotify.prototype.options.icon = false;
-    //var stack_bottomright = {"dir1": "up", "dir2": "right", "spacing1": 0, "spacing2": 0};
-    //var stack_topleft = {"dir1": "down", "dir2": "right", "push": "top"};
     var stack_bottomright = {"dir1": "up", "dir2": "left", "firstpos1": 25, "firstpos2": 25};
     
     PNotify.prototype.options.stack = stack_bottomright;
@@ -38,16 +44,3 @@
     PNotify.prototype.options.animate.animate = true;
     PNotify.prototype.options.animate.in_class = 'bounceInDown',
     PNotify.prototype.options.animate.out_class = 'bounceOutDown';
-    
-script.
-  import { focus } from 'vue-focus';
-
-  export default {
-    directives: { focus: focus },
-    template: '<input type="text" v-focus="focused" @focus="focused = true" @blur="focused = false">',
-    data: function() {
-      return {
-        focused: false,
-      };
-    },
-  };

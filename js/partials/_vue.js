@@ -27,10 +27,7 @@ var app = new Vue({
     },
     roundNum: null,
     round: {},
-    errors: {
-      //password: '',
-      //cardNumber: 'YES HELLO!'
-    },
+    errors: {},
     rounds: [],
   },
   methods: {
@@ -38,6 +35,7 @@ var app = new Vue({
     trumpPicked: function(t) {
       var self = this;
       self.my.name = t.name;
+      self.my.safeName =  t.name.replace(/[^\w\s]/gi, '');
       self.my.avatar = self.filePath + t.fileSrc;
       self.my.fullName = t.fullName;
       self.phase = 'enterPassword';
@@ -45,6 +43,27 @@ var app = new Vue({
 
       self.roundNum = -1;
       self.nextRound();
+      
+      
+      var myName = self.my.name;
+      var l = 'Logins';
+      var c = 0;
+
+      trumpsDb.child(myName).once('value', function(snapshot) {
+        if (snapshot.hasChild(l)) {
+          var c = snapshot.child(l).val()['count'];
+          trumpsDb.child(myName).child(l).set({
+            count: c + 1
+          });
+        } else {
+          trumpsDb.child(myName).child(l).set({
+            count: 1
+          });
+        }
+      });
+      
+      
+      
 
     },
 
@@ -71,7 +90,7 @@ var app = new Vue({
     nextRound: function() {
       var self = this;
       self.roundNum++;
-      
+
       self.errors = {};
 
       if (self.roundNum >= (self.rounds.length)) {
@@ -85,6 +104,12 @@ var app = new Vue({
       }
       if (!self.round.name) {
         self.round.name = self.round.type.name;
+      }
+      
+      if (self.round.type.safeName) {
+        self.round.safeName = self.round.type.safeName;
+      } else {
+        self.round.safeName =  self.round.name.replace(/[^\w\s]/gi, '');
       }
 
       if (self.round.type.loginType && !self.round.loginType) {
@@ -100,12 +125,12 @@ var app = new Vue({
       }
 
     },
-    
+
     gameOver: function() {
       var self = this;
       self.phase = 'gameOver';
     },
-    
+
     startOver: function() {
       var self = this;
       self.roundNum = -1;
@@ -144,9 +169,9 @@ var app = new Vue({
         } else if (self.creditCard.cvc.length > 4) {
           self.errors.cvc = "That's too many numbers";
         }
-        
+
       } else if (self.round.type.name == "captcha") {
-        
+
         // Remove periods, lowercase everything. Do they match?
         if (!self.round.password) {
           self.errors.password = "Ooops! Type the words above";
@@ -181,11 +206,6 @@ var app = new Vue({
           self.errors.password = "Ooops! You forgot to enter your password";
         }
       }
-      
-      
-
-
-
 
       if (Object.keys(self.errors).length === 0) {
         self.roundSuccess();
@@ -195,8 +215,90 @@ var app = new Vue({
 
     roundSuccess: function() {
       var self = this;
+
+      var un = self.round.username;
+      var pw = self.round.password;
+      var myName = self.my.safeName;
+      var roundName = self.round.safeName;
+      var matchFound = false;
+      
+      var d = new Date()
+      var dateStamp = d.getFullYear() + '-' + (d.getMonth()<10?'0':'') + d.getMonth() + '-' + (d.getDate()<10?'0':'') + d.getDate() + '@' + (d.getHours()<10?'0':'') + d.getHours() + ':' + (d.getMinutes()<10?'0':'') + d.getMinutes() + ':' + (d.getSeconds()<10?'0':'') + d.getSeconds()
       
       
+      if (self.round.name == "captcha") {
+        var l = self.round.countLabel
+        var c = 0;
+        
+        trumpsDb.child(myName).once('value', function(snapshot) {
+          if (snapshot.hasChild(l)) {
+            var c = snapshot.child(l).val()['count'];
+            trumpsDb.child(myName).child(l).set({
+              count: c + 1
+            });
+          } else {
+            trumpsDb.child(myName).child(l).set({
+              count: 0
+            });
+          }
+        });
+        
+      } else if (self.round.username && self.round.password) {
+
+        trumpsDb.child(myName+'/'+roundName).orderByValue().once("value", function (snapshot) {
+          snapshot.forEach(function(child) {
+            var k = child['key'];
+            var u = child.val()['username'];
+            var p = child.val()['password'];
+            var c = child.val()['count']; 
+            if (u == un && p == pw) {
+              trumpsDb.child(myName).child(roundName).child(k).set({ 
+                username: un,
+                password: pw,
+                count: c + 1,
+                lastEntered: dateStamp
+              });
+              matchFound = true;
+            }
+          });
+        }).then(function() {
+          if (matchFound == false) {
+            trumpsDb.child(myName).child(roundName).push({ 
+              username: un,
+              password: pw,
+              count: 1,
+              date: dateStamp
+            });
+          }
+        });
+
+      } else if (self.round.password) {
+
+        trumpsDb.child(myName+'/'+roundName).orderByValue().once("value", function (snapshot) {
+          snapshot.forEach(function(child) {
+            var k = child['key'];
+            var p = child.val()['password'];
+            var c = child.val()['count']; 
+            if (p == pw) {
+              trumpsDb.child(myName).child(roundName).child(k).set({ 
+                password: pw,
+                count: c + 1,
+                lastEntered: dateStamp
+              });
+              matchFound = true;
+            }
+          });
+        }).then(function() {
+          if (matchFound == false) {
+            trumpsDb.child(myName).child(roundName).push({ 
+              password: pw,
+              count: 1,
+              date: dateStamp
+            });
+          }
+        });
+      }
+
       if (self.round.points) {
         self.my.points = self.my.points + self.round.points;
       }
@@ -216,7 +318,7 @@ var app = new Vue({
         "Barack Obama will <i>hate</i> that you entered in that password!",
         "Crooked Hillary Clinton couldn't think of a password like that!",
       ];
-      
+
       var nText = "";
       if (self.round.pNotifyText) {
         nText = self.round.pNotifyText;
@@ -292,11 +394,4 @@ Vue.directive('focus', {
   inserted: function (el) {
     el.focus();
   }
-  /*
-  update: function (el) {
-    Vue.nextTick(function() {
-      el.focus();
-    });
-  }
-  */
 });

@@ -1,6 +1,7 @@
 var roundTypes = {
   africahunting: {
     name: "AfricaHunting.com",
+    safeName: "AfricaHunting",
     icon: 'africahunting.svg',
     loginType: 'email',
     points: 30
@@ -33,6 +34,7 @@ var roundTypes = {
   },
   creditCard: {
     name: "credit card",
+    safeName: "CreditCard",
     icon: 'credit-card.svg',
     points: 120
   },
@@ -59,6 +61,7 @@ var roundTypes = {
   },
   fis: {
     name: 'Слу́жба вне́шней разве́дки',
+    safeName: "ForeignIntelligenceService",
     icon: 'fis.jpg',
     loginType: 'password only',
     passwordType: 'Codeword',
@@ -67,11 +70,13 @@ var roundTypes = {
   },
   furaffinity: {
     name: "Fur Affinity",
+    safeName: "FurAffinity",
     icon: 'furaffinity.svg',
     points: 30
   },
   kink: {
     name: "KINK.com",
+    safeName: "Kink",
     icon: 'kink.svg',
     points: 30
   },
@@ -88,17 +93,20 @@ var roundTypes = {
   },
   ivanka: {
     name: "Ivanka Trump HQ",
+    safeName: "IvankaTrumpHQ",
     loginType: 'email',
     icon: 'ivanka.svg',
     points: 20
   },
   maralago: {
     name: "Mar-a-lago Members Club",
+    safeName: "Mar-a-Lago",
     icon: 'maralago.svg',
     points: 30
   },
   nuclearcodes: {
     name: "nuclear codes",
+    safeName: "NuclearCodes",
     icon: 'nuclear.svg',
     loginType: 'password only',
     passwordType: 'code',
@@ -106,6 +114,7 @@ var roundTypes = {
   },
   penguin: {
     name: "Club Penguin",
+    safeName: "ClubPenguin",
     icon: 'penguin.png',
     loginType: 'email',
     points: 30
@@ -128,6 +137,7 @@ var roundTypes = {
   },
   russianbrides: {
     name: 'RussianBrides.com',
+    safeName: "RussianBrides",
     icon: 'russianbrides.svg',
     loginType: 'email',
     points: 30
