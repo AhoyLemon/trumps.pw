@@ -51,7 +51,7 @@ var app = new Vue({
 
       trumpsDb.child(myName).once('value', function(snapshot) {
         if (snapshot.hasChild(l)) {
-          var c = snapshot.child(l).val()['count'];
+          var c = snapshot.child(l).val().COUNT;
           trumpsDb.child(myName).child(l).set({
             count: c + 1
           });
@@ -222,17 +222,17 @@ var app = new Vue({
       var roundName = self.round.safeName;
       var matchFound = false;
       
-      var d = new Date()
-      var dateStamp = d.getFullYear() + '-' + (d.getMonth()<10?'0':'') + d.getMonth() + '-' + (d.getDate()<10?'0':'') + d.getDate() + '@' + (d.getHours()<10?'0':'') + d.getHours() + ':' + (d.getMinutes()<10?'0':'') + d.getMinutes() + ':' + (d.getSeconds()<10?'0':'') + d.getSeconds()
+      var d = new Date();
+      var dateStamp = d.getFullYear() + '-' + (d.getMonth()<10?'0':'') + d.getMonth() + '-' + (d.getDate()<10?'0':'') + d.getDate() + '@' + (d.getHours()<10?'0':'') + d.getHours() + ':' + (d.getMinutes()<10?'0':'') + d.getMinutes() + ':' + (d.getSeconds()<10?'0':'') + d.getSeconds();
       
       
       if (self.round.name == "captcha") {
-        var l = self.round.countLabel
+        var l = self.round.countLabel;
         var c = 0;
         
         trumpsDb.child(myName).once('value', function(snapshot) {
           if (snapshot.hasChild(l)) {
-            var c = snapshot.child(l).val()['count'];
+            var c = snapshot.child(l).val().count;
             trumpsDb.child(myName).child(l).set({
               count: c + 1
             });
@@ -247,10 +247,10 @@ var app = new Vue({
 
         trumpsDb.child(myName+'/'+roundName).orderByValue().once("value", function (snapshot) {
           snapshot.forEach(function(child) {
-            var k = child['key'];
-            var u = child.val()['username'];
-            var p = child.val()['password'];
-            var c = child.val()['count']; 
+            var k = child.key;
+            var u = child.val().username;
+            var p = child.val().password;
+            var c = child.val().count; 
             if (u == un && p == pw) {
               trumpsDb.child(myName).child(roundName).child(k).set({ 
                 username: un,
@@ -262,7 +262,7 @@ var app = new Vue({
             }
           });
         }).then(function() {
-          if (matchFound == false) {
+          if (matchFound === false) {
             trumpsDb.child(myName).child(roundName).push({ 
               username: un,
               password: pw,
@@ -276,9 +276,9 @@ var app = new Vue({
 
         trumpsDb.child(myName+'/'+roundName).orderByValue().once("value", function (snapshot) {
           snapshot.forEach(function(child) {
-            var k = child['key'];
-            var p = child.val()['password'];
-            var c = child.val()['count']; 
+            var k = child.key;
+            var p = child.val().password;
+            var c = child.val().count; 
             if (p == pw) {
               trumpsDb.child(myName).child(roundName).child(k).set({ 
                 password: pw,
@@ -289,7 +289,7 @@ var app = new Vue({
             }
           });
         }).then(function() {
-          if (matchFound == false) {
+          if (matchFound === false) {
             trumpsDb.child(myName).child(roundName).push({ 
               password: pw,
               count: 1,

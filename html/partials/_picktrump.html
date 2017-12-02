@@ -1,7 +1,0 @@
-
-<div class="pick-trump" v-if="phase == 'pickTrump'" v-cloak="v-cloak">
-  <div class="inner">
-    <h3 class="which-trump-headline">Which Trump are you?</h3>
-    <div class="trumps"><a class="avatar" v-for="trump in trumpFamily" v-bind:class="trump.class" v-bind:style="{ backgroundImage: 'url(img/profiles/600/' + trump.fileSrc + ')' }" v-on:click="trumpPicked(trump)"></a></div>
-  </div>
-</div>

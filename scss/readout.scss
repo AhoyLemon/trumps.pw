@@ -1,0 +1,18 @@
+//GLOBALS, GET DEFAULTS
+@import "globals/_reset";
+@import "globals/_variables";
+@import "globals/_mixins";
+@import "globals/_extends";
+@import "globals/_z-index";
+
+@import "partials/_variables";
+
+// SITE SPECIFIC
+
+body { background:$black; }
+
+.table-holder { padding-top: 100px; }
+.passtable { border-collapse: collapse; margin-left: auto; margin-right: auto; background:$white;
+  th { padding: 4px 10px; font-family: $sans; font-weight:$bold; text-transform: uppercase; background:$black; color:$yellow; }
+  td { border: 1px solid $black; padding:0.25em 1em; font-family: $serif; font-size:14px; }
+}

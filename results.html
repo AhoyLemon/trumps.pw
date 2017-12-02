@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Hello!</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700|Quicksand">
+    <link href="css/readout.css" rel="stylesheet">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
+    <script src="https://unpkg.com/vuefire/dist/vuefire.js"></script>
+  </head>
+  <body>
+    <main id="app">
+      <div class="table-holder">
+        <table class="passtable">
+          <thead>
+            <tr>
+              <th>Trump</th>
+              <th>Site</th>
+              <th>Username</th>
+              <th>Password</th>
+            </tr>
+          </thead>
+          <tbody>
+            <template v-for="(item,person) in trumpPasses">
+              <template v-for="(foo,site) in item">
+                <template v-if="!foo.count" v-for="(x,y) in foo">
+                  <tr class="row pass-row" v-if="x.username &amp;&amp; x.password">
+                    <td class="cell">{{person}}</td>
+                    <td class="cell">{{site}}</td>
+                    <td class="cell">{{x.username}}</td>
+                    <td class="cell">{{x.password}}</td>
+                  </tr>
+                </template>
+              </template>
+            </template>
+          </tbody>
+        </table>
+      </div>
+      <div class="table-holder">
+        <table class="passtable">
+          <thead>
+            <tr>
+              <th>Trump</th>
+              <th>Count</th>
+              <th>#</th>
+            </tr>
+          </thead>
+          <tbody>
+            <template v-for="(item,person) in trumpPasses">
+              <template v-for="(foo,site) in item">
+                <tr class="row pass-row" v-if="foo.count">
+                  <td class="cell">{{person}}</td>
+                  <td class="cell">{{site}}</td>
+                  <td class="cell">{{foo.count}}</td>
+                </tr>
+              </template>
+            </template>
+          </tbody>
+        </table>
+      </div>
+    </main>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBcOUvpUVZyu4IRcohETZyJlowW7l-5oro",
+        authDomain: "trumps-pw.firebaseapp.com",
+        databaseURL: "https://trumps-pw.firebaseio.com",
+        projectId: "trumps-pw",
+        storageBucket: "trumps-pw.appspot.com",
+        messagingSenderId: "296029786638"
+      };
+      var firebaseApp = firebase.initializeApp(config);
+      var db = firebaseApp.database();
+      var trumpsDb = db.ref('trumps');
+      
+      let vue = new Vue({
+        el: '#app',
+        data: {
+          loaded: true
+        },
+        firebase: {
+          trumpPasses: {
+            source: db.ref('trumps'),
+            // optionally bind as an object
+            asObject: true,
+            // optionally provide the cancelCallback
+            cancelCallback: function () {},
+            // this is called once the data has been retrieved from firebase
+            readyCallback: function () {}
+          } 
+        }
+      });
+    </script>
+  </body>
+</html>
