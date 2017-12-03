@@ -15,8 +15,23 @@
       b {{round.name}} 
       | credentials for 
       b.points {{round.points}} points!
+      
+  .formbox(v-if="round.type.name == 'toggle'")
+    //-.icon-holder
+      .icon-box(v-if="round.type.icon")
+        //-img(:src="'svg/logo/'+round.type.icon")
+    
+    .input-holder
+      .desc(v-html="round.question")
+      .radios
+        label.radio(v-bind:class="{checked: round.password == 'yes'}" v-on:click="round.password = 'yes'; roundSubmit()")
+          //-input(type="radio" value="yes" v-model="round.password")
+          span Yes
+        label.radio(v-bind:class="{checked: round.password == 'no'}" v-on:click="round.password = 'no'; roundSubmit()")
+          //-input(type="radio" value="no" v-model="round.password")
+          span no
 
-  .formbox(v-if="round.type.name == 'credit card'")
+  .formbox(v-else-if="round.type.name == 'credit card'")
     .icon-holder
       .icon-box(v-if="round.type.icon")
         img(:src="'svg/logo/'+round.type.icon")

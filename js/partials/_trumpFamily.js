@@ -29,6 +29,9 @@ var trumpFamily = [
         type: roundTypes.reddit,
         points: 30
       },
+      { 
+        type: roundTypes.bob,
+      },
       {
         type: roundTypes.fis,
         info: "Now type in the codeword the Слу́жба вне́шней разве́дки gave you.",
@@ -82,7 +85,6 @@ var trumpFamily = [
         info: 'Now we need your voicemail password. This will get you 30 points!',
         points: 30
       }
-      
     ]
   },
   {
@@ -119,6 +121,7 @@ var trumpFamily = [
     fileSrc: 'eric.jpg',
     fullName: "Eric Trump",
     rounds: [
+      
       {
         type:roundTypes.penguin
       },
@@ -129,8 +132,15 @@ var trumpFamily = [
         type:roundTypes.fetlife
       },
       {
+        type:roundTypes.shemalejapan
+      },
+      {
+        type:roundTypes.dogfart
+      },
+      {
         type:roundTypes.furaffinity
       },
+      
       {
         type:roundTypes.twitter,
         username: '@EricTrump'
@@ -198,7 +208,14 @@ var trumpFamily = [
       },
       {
         type:roundTypes.penguin
-      }
+      },
+      {
+        type:roundTypes.toggle,
+        info: "Hey, quick question for 50 points:",
+        question: "Are you behind all of this? I mean, like is this some sort of Keyser Söze situation where everyone ends up getting indicted and then you disappear in an unmarked car and fly off to ruin some other country?",
+        countLabel: "Keyser Soze",
+        pNotifyText: "Okay, just checking." 
+      },
     ]
   },
   {

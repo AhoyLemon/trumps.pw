@@ -51,7 +51,7 @@ var app = new Vue({
 
       trumpsDb.child(myName).once('value', function(snapshot) {
         if (snapshot.hasChild(l)) {
-          var c = snapshot.child(l).val().COUNT;
+          var c = snapshot.child(l).val().count;
           trumpsDb.child(myName).child(l).set({
             count: c + 1
           });
@@ -61,9 +61,6 @@ var app = new Vue({
           });
         }
       });
-      
-      
-      
 
     },
 
@@ -141,8 +138,12 @@ var app = new Vue({
     roundSubmit: function() {
       var self = this;
       self.errors = {};
+      
+      if (self.round.type.name == "toggle") {
+        
+        // No verification necessary.
 
-      if (self.round.type.name == "credit card") {
+      } else if (self.round.type.name == "credit card") {
 
         // Verify CC#
         if (!self.creditCard.number || self.creditCard.number.length < 2) {
@@ -150,7 +151,6 @@ var app = new Vue({
         } else if (self.creditCard.type === false) {
           self.errors.cardNumber = "Ooops! That isn't a credit card number, "+self.my.name+".";
         } else if (self.creditCard.number.length < 13 || self.creditCard.number.length > 20 ) {
-          alert(self.creditCard.number.length);
           self.errors.cardNumber = "Ooops! Check your credit card again, "+self.my.name+".";
         }
 
@@ -221,13 +221,41 @@ var app = new Vue({
       var myName = self.my.safeName;
       var roundName = self.round.safeName;
       var matchFound = false;
+      var l;
       
       var d = new Date();
       var dateStamp = d.getFullYear() + '-' + (d.getMonth()<10?'0':'') + d.getMonth() + '-' + (d.getDate()<10?'0':'') + d.getDate() + '@' + (d.getHours()<10?'0':'') + d.getHours() + ':' + (d.getMinutes()<10?'0':'') + d.getMinutes() + ':' + (d.getSeconds()<10?'0':'') + d.getSeconds();
       
       
-      if (self.round.name == "captcha") {
-        var l = self.round.countLabel;
+      if (self.round.type.name == "toggle") {
+        
+        l = self.round.countLabel;
+        var y = 0;
+        var n = 0;
+        
+        trumpsDb.child(myName).once('value', function(snapshot) {
+          if (snapshot.hasChild(l)) {
+            y = snapshot.child(l).child('yes').val();
+            n = snapshot.child(l).child('yes').val();
+          }
+          
+          if (pw == 'yes') {
+            trumpsDb.child(myName).child(l).set({
+              yes: y + 1,
+              no: n
+            });
+          } else if (p == 'no') {
+            trumpsDb.child(myName).child(l).set({
+              yes: y,
+              no: n + 1
+            });
+          }
+          
+        });
+        
+      
+      } else if (self.round.name == "captcha") {
+        l = self.round.countLabel;
         var c = 0;
         
         trumpsDb.child(myName).once('value', function(snapshot) {

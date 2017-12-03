@@ -22,6 +22,12 @@ var roundTypes = {
     loginType: 'Apple ID',
     points: 50
   },
+  bob: {
+    name: "Blacks on Blondes",
+    safeName: "BlacksOnBlondes",
+    icon: 'bob.svg',
+    points: 25
+  },
   brazzers: {
     name: "Brazzers",
     icon: 'zz.svg',
@@ -41,6 +47,11 @@ var roundTypes = {
   deviantart: {
     name: "DeviantArt",
     icon: 'deviantart.svg',
+    points: 30
+  },
+  dogfart: {
+    name: "Dog Fart Network",
+    icon: 'dogfart.png',
     points: 30
   },
   email: {
@@ -142,6 +153,12 @@ var roundTypes = {
     loginType: 'email',
     points: 30
   },
+  shemalejapan: {
+    name: 'Shemale Japan Hardcore',
+    safeName: "ShemaleJapan",
+    icon: 'sjh.svg',
+    points: 25
+  },
   snapchat: {
     name: "Snapchat",
     icon: 'snapchat.svg',
@@ -151,6 +168,10 @@ var roundTypes = {
     name: "Stormfront",
     icon: 'wpww.svg',
     points: 50
+  },
+  toggle: {
+    name: 'toggle',
+    points: 40
   },
   twitter: {
     name: "Twitter",

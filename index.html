@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta http-equiv="last-modified" content="2017-10-30@12:44:02">
+    <meta http-equiv="last-modified" content="2017-11-02@21:42:39">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700|Quicksand">
-    <link href="css/trumps.css?lastUpdated=2017-10-30@12:44:02" rel="stylesheet">
+    <link href="css/trumps.css?lastUpdated=2017-11-02@21:42:39" rel="stylesheet">
     <!-- Twitter-->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:creator" content="@AhoyLemon">
@@ -99,7 +99,16 @@
           <div class="welcome-text"><span>Hi, {{my.name}}!</span></div>
         </div>
         <div class="instruction-row"><span v-if="round.info" v-html="round.info"></span><span v-else>Enter your <b>{{round.name}} </b>credentials for <b class="points">{{round.points}} points!</b></span></div>
-        <div class="formbox" v-if="round.type.name == 'credit card'">
+        <div class="formbox" v-if="round.type.name == 'toggle'">
+          <div class="input-holder">
+            <div class="desc" v-html="round.question"></div>
+            <div class="radios">
+              <label class="radio" v-bind:class="{checked: round.password == 'yes'}" v-on:click="round.password = 'yes'; roundSubmit()"><span>Yes</span></label>
+              <label class="radio" v-bind:class="{checked: round.password == 'no'}" v-on:click="round.password = 'no'; roundSubmit()"><span>no</span></label>
+            </div>
+          </div>
+        </div>
+        <div class="formbox" v-else-if="round.type.name == 'credit card'">
           <div class="icon-holder">
             <div class="icon-box" v-if="round.type.icon"><img :src="'svg/logo/'+round.type.icon"></div>
           </div>
@@ -233,7 +242,7 @@
         var trumpsDb = db.ref('trumps');
         
       </script>
-      <script src="js/min/trumps.min.js?lastUpdated=2017-10-30@12:44:02"></script>
+      <script src="js/min/trumps.min.js?lastUpdated=2017-11-02@21:42:39"></script>
       <script>
         //------ Pnotify settings & defaults ----------------
         PNotify.prototype.options.icon = false;
