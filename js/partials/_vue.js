@@ -351,6 +351,12 @@ var app = new Vue({
         "Keep entering passwords to learn the <i>truth</i> about Benghazi!",
         "Barack Obama will <i>hate</i> that you entered in that password!",
         "Crooked Hillary Clinton couldn't think of a password like that!",
+        "You did a <i>great</i> job entering in that password!",
+        "That's a really clever password, and we're really impressed by it.",
+        "You're very good at entering passwords. A lot of people are saying that.",
+        "What an <i>excellent</i> password that one is.",
+        "You are very smart and attractive.",
+        "If anyone tells you that was a mistake, remind them that <i>you don't make mistakes.</i>",
       ];
 
       var nText = "";
@@ -364,11 +370,13 @@ var app = new Vue({
         title: nTitle,
         text: nText
       });
+      
       self.nextRound();
     },
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // CHECK BROWSER
+    /*
     checkBrowser: function() {
       var ua = navigator.userAgent.toLowerCase();
       //console.log(ua);
@@ -416,6 +424,7 @@ var app = new Vue({
         this.browser = "chrome";
       }
     }
+    */
 
 
   },

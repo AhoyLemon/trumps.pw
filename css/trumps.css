@@ -1033,6 +1033,10 @@ body {
     margin-left: 10px;
     margin-right: 10px; } }
 
+.ui-pnotify .ui-pnotify-container {
+  background-color: #2ff92f;
+  color: #212121; }
+
 .flag {
   position: fixed;
   top: 0;

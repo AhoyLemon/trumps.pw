@@ -1,5 +1,4 @@
 .screen { background-color:$white; max-width: 460px; margin: 4em auto; padding: 1em; position: relative; font-family: $font;
-  
   .close-button { @include position(absolute,2px,2px); border:none; padding: 0; cursor: pointer; background: transparent;
     svg { width:2.7em; height:2.7em;
       .outline { opacity: 0; }
@@ -11,25 +10,23 @@
       svg .x { fill:$white; }
     }
   }
-  
   .top-row { @include flex-container(); margin-bottom: 1em;
-    
     .welcome-box { @include flex-item(5rem); @include flex-center(); }
     .welcome-text { @include flex-item(calc(100% - 5rem)); @include flex-center(); justify-content:left; }
-    
     figure.avatar { width:5rem; height:5rem; border-radius: 50%; background-size:cover; background-position: center; }
     .welcome-text {
       span { padding-left: 0.4em; font-size:3em; @extend %goldText; }
     }
   }
   p { margin-bottom: 1em;}
-  
   .blue { color:$blue; }
   .bigger { font-size:125%; }
-  
 }
 
 @media (max-width:450px) {
   .screen { margin-left: 10px; margin-right: 10px; }
 }
 
+.ui-pnotify {
+  .ui-pnotify-container { background-color:#2ff92f; color:$black; }
+}

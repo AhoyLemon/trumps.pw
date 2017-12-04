@@ -4,16 +4,11 @@
   p { margin-bottom: 0.5em;}
   .button-holder { text-align: center; 
     button { display: inline-block; font-size: 1.25rem; border:1px solid $black; padding: 0.45em 1.25em; cursor: pointer; }
-    
     .button { background:$goldGradient; color:$white; text-shadow: 1px 1px 1px $black, -1px -1px 1px $black; border-color:transparent; background-position: center; }
-    
     .button { background:$goldGradientTwo; color:$black; text-shadow:1px 1px 1px $white; font-weight: $bold; background-size:100%; transition:background 0.3s ease; background-position: center;
       &:hover { background-size:130%; }
       &:active { background-size:200%; }
     }
-    
-    
-    //button:active { box-shadow: inset 2px 2px 2px $black; }
   }
 }
 
