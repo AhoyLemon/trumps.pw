@@ -1,0 +1,12 @@
+.formbox(v-if="round.type.name == 'yes/no'")
+  .icon-holder
+    .icon-box(v-if="round.type.icon")
+      img(:src="'svg/logo/'+round.type.icon")
+
+  .input-holder
+    .desc(v-html="round.question")
+    .radios
+      button.radio(v-bind:class="{checked: round.password == 'yes'}" v-on:click="round.password = 'yes'; roundSubmit()")
+        span Yes
+      button.radio(v-bind:class="{checked: round.password == 'no'}" v-on:click="round.password = 'no'; roundSubmit()")
+        span no

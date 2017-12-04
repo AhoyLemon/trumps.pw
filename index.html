@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Where members of the Trump family can enter in passwords to EARN POINTS.">
-    <meta http-equiv="last-modified" content="2017-11-04@10:49:04">
+    <meta http-equiv="last-modified" content="2017-11-04@13:21:11">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700|Quicksand">
-    <link href="css/trumps.css?lastUpdated=2017-11-04@10:49:04" rel="stylesheet">
+    <link href="css/trumps.css?lastUpdated=2017-11-04@13:21:11" rel="stylesheet">
     <!-- Twitter-->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@AhoyLemon">
@@ -86,90 +86,109 @@
           </div>
           <div class="welcome-text"><span>Hi, {{my.name}}!</span></div>
         </div>
-        <div class="instruction-row"><span v-if="round.info" v-html="round.info"></span><span v-else>Enter your <b>{{round.name}} </b>credentials for <b class="points">{{round.points}} points!</b></span></div>
-        <div class="formbox" v-if="round.type.name == 'toggle'">
-          <div class="input-holder">
-            <div class="desc" v-html="round.question"></div>
-            <div class="radios">
-              <label class="radio" v-bind:class="{checked: round.password == 'yes'}" v-on:click="round.password = 'yes'; roundSubmit()"><span>Yes</span></label>
-              <label class="radio" v-bind:class="{checked: round.password == 'no'}" v-on:click="round.password = 'no'; roundSubmit()"><span>no</span></label>
+        <div class="instruction-row"><span v-if="round.info" v-html="round.info"></span><span v-else>Enter your <b>{{round.name}} </b>credentials for <b class="points">{{round.points}} points!</b></span>
+          <div class="formbox" v-if="round.type.name == 'yes/no'">
+            <div class="icon-holder">
+              <div class="icon-box" v-if="round.type.icon"><img :src="'svg/logo/'+round.type.icon"></div>
+            </div>
+            <div class="input-holder">
+              <div class="desc" v-html="round.question"></div>
+              <div class="radios">
+                <button class="radio" v-bind:class="{checked: round.password == 'yes'}" v-on:click="round.password = 'yes'; roundSubmit()"><span>Yes</span></button>
+                <button class="radio" v-bind:class="{checked: round.password == 'no'}" v-on:click="round.password = 'no'; roundSubmit()"><span>no</span></button>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="formbox" v-else-if="round.type.name == 'credit card'">
-          <div class="icon-holder">
-            <div class="icon-box" v-if="round.type.icon"><img :src="'svg/logo/'+round.type.icon"></div>
-          </div>
-          <div class="input-holder">
-            <label class="card-number"><span>Card Number</span>
-              <input class="card-number" type="text" v-mask="'#### #### #### ####'" placeholder="#### #### #### ####" v-model="creditCard.number" v-on:keyup="checkCreditCardType()" v-bind:class="{error: errors.cardNumber}" v-focus>
-              <div class="error-msg username-error" v-if="errors.cardNumber" v-html="errors.cardNumber"></div>
-            </label>
-            <label class="expiration"><span>Expiration</span>
-              <input type="text" v-mask="'##/####'" placeholder="MM/YYYY" v-model="creditCard.expiration" v-bind:class="{error: errors.expiration}">
-              <div class="error-msg username-error" v-if="errors.expiration" v-html="errors.expiration"></div>
-            </label>
-            <label class="cvc"><span>CVC</span>
-              <input type="text" v-mask="'###'" placeholder="###" v-model="creditCard.cvc" v-bind:class="{error: errors.cvc}">
-              <div class="error-msg username-error" v-if="errors.cvc" v-html="errors.cvc"></div>
-            </label>
-            <div class="buttons">
-              <button class="skip" v-on:click="nextRound()">Skip</button>
-              <button class="submit" v-on:click="roundSubmit()">Redeem</button>
+          <div class="formbox" v-else-if="round.type.name == 'question'">
+            <div class="icon-holder">
+              <div class="icon-box" v-if="round.type.icon"><img :src="'svg/logo/'+round.type.icon"></div>
+            </div>
+            <div class="input-holder">
+              <div class="desc" v-html="round.question"></div>
+              <label class="textarea">
+                <textarea v-model="round.password" placeholder="type your answer here"></textarea>
+                <div class="error-msg password-error" v-show="errors.password" v-html="errors.password"></div>
+              </label>
+              <div class="buttons">
+                <button class="skip" v-on:click="nextRound()">Skip</button>
+                <button class="submit" v-on:click="roundSubmit()">Redeem</button>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="formbox" v-else-if="round.type.name == 'captcha'">
-          <div class="icon-holder">
-            <div class="icon-box" v-if="round.type.icon"><img :src="'svg/logo/'+round.type.icon"></div>
-          </div>
-          <form class="input-holder" v-on:submit.prevent="roundSubmit">
-            <label class="captcha-image"><img :src="'img/captcha/'+round.img"></label>
-            <label class="password">
-              <input type="text" v-model="round.password" v-bind:class="{error: errors.password}" v-focus>
-              <div class="error-msg password-error" v-show="errors.password" v-html="errors.password"></div>
-            </label>
-            <div class="buttons">
-              <!--button.skip(v-on:click="nextRound()") Skip-->
-              <button class="submit" type="submit">Continue</button>
+          <div class="formbox" v-else-if="round.type.name == 'credit card'">
+            <div class="icon-holder">
+              <div class="icon-box" v-if="round.type.icon"><img :src="'svg/logo/'+round.type.icon"></div>
             </div>
-          </form>
-        </div>
-        <div class="formbox" v-else>
-          <div class="icon-holder">
-            <div class="icon-box" v-if="round.type.icon"><img :src="'svg/logo/'+round.type.icon"></div>
+            <div class="input-holder">
+              <label class="card-number"><span>Card Number</span>
+                <input class="card-number" type="text" v-mask="'#### #### #### ####'" placeholder="#### #### #### ####" v-model="creditCard.number" v-on:keyup="checkCreditCardType()" v-bind:class="{error: errors.cardNumber}" v-focus>
+                <div class="error-msg username-error" v-if="errors.cardNumber" v-html="errors.cardNumber"></div>
+              </label>
+              <label class="expiration"><span>Expiration</span>
+                <input type="text" v-mask="'##/####'" placeholder="MM/YYYY" v-model="creditCard.expiration" v-bind:class="{error: errors.expiration}">
+                <div class="error-msg username-error" v-if="errors.expiration" v-html="errors.expiration"></div>
+              </label>
+              <label class="cvc"><span>CVC</span>
+                <input type="text" v-mask="'###'" placeholder="###" v-model="creditCard.cvc" v-bind:class="{error: errors.cvc}">
+                <div class="error-msg username-error" v-if="errors.cvc" v-html="errors.cvc"></div>
+              </label>
+              <div class="buttons">
+                <button class="skip" v-on:click="nextRound()">Skip</button>
+                <button class="submit" v-on:click="roundSubmit()">Redeem</button>
+              </div>
+            </div>
           </div>
-          <div class="input-holder">
-            <label class="username" v-if="round.loginType == 'password only'">
-              <!-- nothing here.-->
-            </label>
-            <label class="username" v-else-if="round.loginType == 'email'"><span>Email Address</span>
-              <input type="email" v-model="round.username" v-bind:class="{error: errors.username}" v-focus>
-              <div class="error-msg username-error" v-if="errors.username" v-html="errors.username"></div>
-            </label>
-            <label class="username" v-else-if="round.type.name == 'Facebook'"><span>Email or Phone</span>
-              <input type="text" v-model="round.username" v-focus>
-              <div class="error-msg username-error" v-if="errors.username" v-html="errors.username"></div>
-            </label>
-            <label class="username" v-else-if="round.loginType == 'phone'"><span>Phone Number</span>
-              <input type="tel" v-mask="'(###) ###-####'" placeholder="(###) ###-####" v-model="round.username" v-bind:class="{error: errors.username}" v-focus>
-              <div class="error-msg username-error" v-if="errors.username" v-html="errors.username"></div>
-            </label>
-            <label class="username" v-else><span v-if="round.loginType" v-text="round.loginType"></span><span v-else>Username</span>
-              <!--input(v-if="round.username" type="text" v-model="round.username")-->
-              <input v-if="round.type.name == 'Twitter'" type="text" v-model="round.username">
-              <input v-else type="text" v-model="round.username" v-focus>
-              <div class="error-msg username-error" v-if="errors.username" v-html="errors.username"></div>
-            </label>
-            <label class="password"><span v-if="round.passwordType">{{round.passwordType}}</span><span v-else>Password</span>
-              <input v-if="round.passwordType == 'PIN'" v-model="round.password" v-mask="'########'" v-bind:class="{error: errors.password}">
-              <input v-else-if="round.loginType == 'password only' || round.type.name == 'Twitter'" v-model="round.password" v-bind:class="{error: errors.password}" v-focus>
-              <input v-else type="text" v-model="round.password" v-bind:class="{error: errors.password}">
-              <div class="error-msg password-error" v-show="errors.password" v-html="errors.password"></div>
-            </label>
-            <div class="buttons">
-              <button class="skip" v-on:click="nextRound()">Skip</button>
-              <button class="submit" v-on:click="roundSubmit()">Redeem</button>
+          <div class="formbox" v-else-if="round.type.name == 'captcha'">
+            <div class="icon-holder">
+              <div class="icon-box" v-if="round.type.icon"><img :src="'svg/logo/'+round.type.icon"></div>
+            </div>
+            <form class="input-holder" v-on:submit.prevent="roundSubmit">
+              <label class="captcha-image"><img :src="'img/captcha/'+round.img"></label>
+              <label class="password">
+                <input type="text" v-model="round.password" v-bind:class="{error: errors.password}" v-focus>
+                <div class="error-msg password-error" v-show="errors.password" v-html="errors.password"></div>
+              </label>
+              <div class="buttons">
+                <button class="submit" type="submit">Continue</button>
+              </div>
+            </form>
+          </div>
+          <div class="formbox" v-else>
+            <div class="icon-holder">
+              <div class="icon-box" v-if="round.type.icon"><img :src="'svg/logo/'+round.type.icon"></div>
+            </div>
+            <div class="input-holder">
+              <label class="username" v-if="round.loginType == 'password only'">
+                <!-- nothing here.-->
+              </label>
+              <label class="username" v-else-if="round.loginType == 'email'"><span>Email Address</span>
+                <input type="email" v-model="round.username" v-bind:class="{error: errors.username}" v-focus>
+                <div class="error-msg username-error" v-if="errors.username" v-html="errors.username"></div>
+              </label>
+              <label class="username" v-else-if="round.type.name == 'Facebook'"><span>Email or Phone</span>
+                <input type="text" v-model="round.username" v-focus>
+                <div class="error-msg username-error" v-if="errors.username" v-html="errors.username"></div>
+              </label>
+              <label class="username" v-else-if="round.loginType == 'phone'"><span>Phone Number</span>
+                <input type="tel" v-mask="'(###) ###-####'" placeholder="(###) ###-####" v-model="round.username" v-bind:class="{error: errors.username}" v-focus>
+                <div class="error-msg username-error" v-if="errors.username" v-html="errors.username"></div>
+              </label>
+              <label class="username" v-else><span v-if="round.loginType" v-text="round.loginType"></span><span v-else>Username</span>
+                <!--input(v-if="round.username" type="text" v-model="round.username")-->
+                <input v-if="round.type.name == 'Twitter'" type="text" v-model="round.username">
+                <input v-else type="text" v-model="round.username" v-focus>
+                <div class="error-msg username-error" v-if="errors.username" v-html="errors.username"></div>
+              </label>
+              <label class="password"><span v-if="round.passwordType">{{round.passwordType}}</span><span v-else>Password</span>
+                <input v-if="round.passwordType == 'PIN'" v-model="round.password" v-mask="'########'" v-bind:class="{error: errors.password}">
+                <input v-else-if="round.loginType == 'password only' || round.type.name == 'Twitter'" v-model="round.password" v-bind:class="{error: errors.password}" v-focus>
+                <input v-else type="text" v-model="round.password" v-bind:class="{error: errors.password}">
+                <div class="error-msg password-error" v-show="errors.password" v-html="errors.password"></div>
+              </label>
+              <div class="buttons">
+                <button class="skip" v-on:click="nextRound()">Skip</button>
+                <button class="submit" v-on:click="roundSubmit()">Redeem</button>
+              </div>
             </div>
           </div>
         </div>
@@ -230,7 +249,7 @@
         var trumpsDb = db.ref('trumps');
         
       </script>
-      <script src="js/min/trumps.min.js?lastUpdated=2017-11-04@10:49:04"></script>
+      <script src="js/min/trumps.min.js?lastUpdated=2017-11-04@13:21:11"></script>
       <script>
         //------ Pnotify settings & defaults ----------------
         PNotify.prototype.options.icon = false;

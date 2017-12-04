@@ -1,9 +1,11 @@
+- var d = new Date()
+- var lastUpdated = d.getFullYear() + '-' + (d.getMonth()<10?'0':'') + d.getMonth() + '-' + (d.getDate()<10?'0':'') + d.getDate() + '@' + (d.getHours()<10?'0':'') + d.getHours() + ':' + (d.getMinutes()<10?'0':'') + d.getMinutes() + ':' + (d.getSeconds()<10?'0':'') + d.getSeconds()
 doctype html
 html(lang="en")
   head
-    title Hello!
+    title TRUMP.PW results
     link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700|Quicksand")
-    link(href="/css/readout.css" rel="stylesheet")
+    link(href="/css/readout.css?lastUpdated="+lastUpdated rel="stylesheet")
     script(src="/js/libraries/vue.full.js")
     script(src="https://www.gstatic.com/firebasejs/3.6.8/firebase.js")
     script(src="https://unpkg.com/vuefire/dist/vuefire.js")
@@ -26,6 +28,11 @@ html(lang="en")
                     td.cell {{person}}
                     td.cell {{site}}
                     td.cell {{x.username}}
+                    td.cell {{x.password}}
+                  tr.row.pass-row(v-else-if="x.password")
+                    td.cell {{person}}
+                    td.cell {{site}}
+                    td.cell
                     td.cell {{x.password}}
                     
       .table-holder

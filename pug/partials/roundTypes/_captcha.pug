@@ -1,0 +1,13 @@
+.formbox(v-else-if="round.type.name == 'captcha'")
+  .icon-holder
+    .icon-box(v-if="round.type.icon")
+      img(:src="'svg/logo/'+round.type.icon")
+      
+  form.input-holder(v-on:submit.prevent="roundSubmit")
+    label.captcha-image
+      img(:src="'img/captcha/'+round.img")
+    label.password
+      input(type="text" v-model="round.password" v-bind:class="{error: errors.password}" v-focus)
+      .error-msg.password-error(v-show="errors.password" v-html="errors.password")
+    .buttons
+      button.submit(type="submit") Continue

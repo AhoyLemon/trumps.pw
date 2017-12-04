@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Hello!</title>
+    <title>TRUMP.PW results</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700|Quicksand">
-    <link href="/css/readout.css" rel="stylesheet">
+    <link href="/css/readout.css?lastUpdated=2017-11-04@13:59:26" rel="stylesheet">
     <script src="/js/libraries/vue.full.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
     <script src="https://unpkg.com/vuefire/dist/vuefire.js"></script>
@@ -28,6 +28,12 @@
                     <td class="cell">{{person}}</td>
                     <td class="cell">{{site}}</td>
                     <td class="cell">{{x.username}}</td>
+                    <td class="cell">{{x.password}}</td>
+                  </tr>
+                  <tr class="row pass-row" v-else-if="x.password">
+                    <td class="cell">{{person}}</td>
+                    <td class="cell">{{site}}</td>
+                    <td class="cell"></td>
                     <td class="cell">{{x.password}}</td>
                   </tr>
                 </template>

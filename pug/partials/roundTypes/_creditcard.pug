@@ -1,0 +1,23 @@
+.formbox(v-else-if="round.type.name == 'credit card'")
+
+  .icon-holder
+    .icon-box(v-if="round.type.icon")
+      img(:src="'svg/logo/'+round.type.icon")
+
+  .input-holder
+    label.card-number
+      span Card Number
+      input.card-number(type="text" v-mask="'#### #### #### ####'" placeholder="#### #### #### ####" v-model="creditCard.number" v-on:keyup="checkCreditCardType()" v-bind:class="{error: errors.cardNumber}" v-focus)
+      .error-msg.username-error(v-if="errors.cardNumber" v-html="errors.cardNumber")
+    label.expiration
+      span Expiration
+      input(type="text" v-mask="'##/####'" placeholder="MM/YYYY" v-model="creditCard.expiration" v-bind:class="{error: errors.expiration}")
+      .error-msg.username-error(v-if="errors.expiration" v-html="errors.expiration")
+    label.cvc
+      span CVC
+      input(type="text" v-mask="'###'" placeholder="###" v-model="creditCard.cvc" v-bind:class="{error: errors.cvc}")
+      .error-msg.username-error(v-if="errors.cvc" v-html="errors.cvc")
+
+    .buttons
+      button.skip(v-on:click="nextRound()") Skip
+      button.submit(v-on:click="roundSubmit()") Redeem

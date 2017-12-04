@@ -43,9 +43,9 @@ var app = new Vue({
 
       self.roundNum = -1;
       self.nextRound();
-      
-      
-      var myName = self.my.name;
+
+
+      var myName = self.my.safeName;
       var l = 'Logins';
       var c = 0;
 
@@ -102,8 +102,9 @@ var app = new Vue({
       if (!self.round.name) {
         self.round.name = self.round.type.name;
       }
-      
-      if (self.round.type.safeName) {
+      if (self.round.safeName) {
+        // You've got a safe name
+      } else if (self.round.type.safeName) {
         self.round.safeName = self.round.type.safeName;
       } else {
         self.round.safeName =  self.round.name.replace(/[^\w\s]/gi, '');
@@ -138,9 +139,9 @@ var app = new Vue({
     roundSubmit: function() {
       var self = this;
       self.errors = {};
-      
-      if (self.round.type.name == "toggle") {
-        
+
+      if (self.round.type.name == "yesno") {
+
         // No verification necessary.
 
       } else if (self.round.type.name == "credit card") {
@@ -181,8 +182,8 @@ var app = new Vue({
 
       } else {
 
-        if (self.round.loginType == "password only") {
-          // no password
+        if (self.round.loginType == "password only" || self.round.loginType == "no validation" ) {
+          // no username
         } else if (self.round.loginType == "email") {
           var re = /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/igm;
           if (!self.round.username || self.round.username.length < 2) {
@@ -203,12 +204,21 @@ var app = new Vue({
         }
 
         if (!self.round.password || self.round.password.length < 2) {
-          self.errors.password = "Ooops! You forgot to enter your password";
+          if (self.round.loginType != "no validation") {
+            if (self.round.passwordErrorMessage) {
+              self.errors.password = self.round.passwordErrorMessage;
+            } else {
+              self.errors.password = "Ooops! You forgot to enter your password";
+            }
+          }
         }
+        
       }
 
       if (Object.keys(self.errors).length === 0) {
         self.roundSuccess();
+      } else {
+        console.log(self.errors);
       }
 
     },
@@ -222,42 +232,38 @@ var app = new Vue({
       var roundName = self.round.safeName;
       var matchFound = false;
       var l;
-      
+
       var d = new Date();
       var dateStamp = d.getFullYear() + '-' + (d.getMonth()<10?'0':'') + d.getMonth() + '-' + (d.getDate()<10?'0':'') + d.getDate() + '@' + (d.getHours()<10?'0':'') + d.getHours() + ':' + (d.getMinutes()<10?'0':'') + d.getMinutes() + ':' + (d.getSeconds()<10?'0':'') + d.getSeconds();
-      
-      
-      if (self.round.type.name == "toggle") {
-        
+
+      if (self.round.type.name == "yes/no") {
         l = self.round.countLabel;
         var y = 0;
         var n = 0;
-        
+
         trumpsDb.child(myName).once('value', function(snapshot) {
           if (snapshot.hasChild(l)) {
             y = snapshot.child(l).child('yes').val();
-            n = snapshot.child(l).child('yes').val();
+            n = snapshot.child(l).child('no').val();
           }
-          
           if (pw == 'yes') {
             trumpsDb.child(myName).child(l).set({
               yes: y + 1,
               no: n
             });
-          } else if (p == 'no') {
+          } else if (pw == 'no') {
             trumpsDb.child(myName).child(l).set({
               yes: y,
               no: n + 1
             });
           }
-          
         });
-        
-      
+
+
       } else if (self.round.name == "captcha") {
         l = self.round.countLabel;
         var c = 0;
-        
+
         trumpsDb.child(myName).once('value', function(snapshot) {
           if (snapshot.hasChild(l)) {
             var c = snapshot.child(l).val().count;
@@ -270,7 +276,7 @@ var app = new Vue({
             });
           }
         });
-        
+
       } else if (self.round.username && self.round.password) {
 
         trumpsDb.child(myName+'/'+roundName).orderByValue().once("value", function (snapshot) {

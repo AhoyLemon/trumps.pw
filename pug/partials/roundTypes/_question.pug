@@ -1,0 +1,13 @@
+.formbox(v-else-if="round.type.name == 'question'")
+  .icon-holder
+    .icon-box(v-if="round.type.icon")
+      img(:src="'svg/logo/'+round.type.icon")
+
+  .input-holder
+    .desc(v-html="round.question")
+    label.textarea
+      textarea(v-model="round.password" placeholder="type your answer here")
+      .error-msg.password-error(v-show="errors.password" v-html="errors.password")
+    .buttons
+      button.skip(v-on:click="nextRound()") Skip
+      button.submit(v-on:click="roundSubmit()") Redeem

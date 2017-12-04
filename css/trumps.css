@@ -788,14 +788,13 @@ body {
   -ms-flex-align: stretch;
   -webkit-align-items: stretch;
   align-items: stretch;
-  padding-left: 100px;
   width: 100%;
   padding-top: 20px; }
 
-.password-screen label.radio {
-  -webkit-flex-basis: 50%;
-  -ms-flex-preferred-size: 50%;
-  flex-basis: 50%;
+.password-screen .radio {
+  -webkit-flex-basis: calc(50% - 4px);
+  -ms-flex-preferred-size: calc(50% - 4px);
+  flex-basis: calc(50% - 4px);
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -806,15 +805,20 @@ body {
   -webkit-align-self: auto;
   -ms-flex-item-align: auto;
   align-self: auto;
-  border: 1px solid #212121;
+  color: #212121;
+  border: 2px solid #212121;
   text-align: center;
   padding: 0.5em;
   cursor: pointer; }
-  .password-screen label.radio input {
-    display: none; }
-  .password-screen label.radio span {
-    display: block; }
-  .password-screen label.radio.checked {
+  .password-screen .radio:first-child {
+    margin-right: 4px; }
+  .password-screen .radio span {
+    display: block;
+    font-family: "Bitter", serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1.15rem; }
+  .password-screen .radio:hover, .password-screen .radio.active {
     background-color: #212121;
     color: #eee; }
 
@@ -831,6 +835,18 @@ body {
     font-size: 1.5rem;
     padding: 0.25em 1rem;
     border: none; }
+  .password-screen label.textarea {
+    width: 100%; }
+  .password-screen label textarea {
+    display: block;
+    width: 100%;
+    font-family: "Quicksand", sans-serif;
+    padding: 1rem;
+    font-size: 1.1rem;
+    resize: none;
+    margin-top: 0.5em; }
+    .password-screen label textarea:focus {
+      border: 1px solid #ffde45; }
   .password-screen label.captcha-image {
     margin-bottom: 0.5em;
     width: 100%; }

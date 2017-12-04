@@ -141,6 +141,12 @@ var roundTypes = {
     icon: 'pornhub.svg',
     points: 65
   },
+  question: {
+    name: 'question',
+    loginType: 'password only',
+    icon: 'question-green.svg',
+    points: 50
+  },
   reddit: {
     name: "Reddit",
     icon: 'reddit.svg',
@@ -169,10 +175,6 @@ var roundTypes = {
     icon: 'wpww.svg',
     points: 50
   },
-  toggle: {
-    name: 'toggle',
-    points: 40
-  },
   twitter: {
     name: "Twitter",
     icon: 'twitter.svg',
@@ -195,5 +197,11 @@ var roundTypes = {
     name: "Wikipedia",
     icon: 'wikipedia.svg',
     points: 25
+  },
+  yesno: {
+    name: 'yes/no',
+    loginType: 'no validation',
+    icon: 'question-green.svg',
+    points: 40
   }
 };

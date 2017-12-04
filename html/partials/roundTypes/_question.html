@@ -1,0 +1,8 @@
+
+<div class="input-holder" v-else-if="round.type.name == 'question'">
+  <div class="desc" v-html="round.question"></div>
+  <label class="textarea">
+    <textarea v-model="round.password" placeholder="Uhhhhhh I think it's under the girl's butt"></textarea>
+    <div class="error-msg password-error" v-show="errors.password" v-html="errors.password"></div>
+  </label>
+</div>

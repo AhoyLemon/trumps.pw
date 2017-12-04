@@ -1,0 +1,16 @@
+
+<div class="formbox" v-else-if="round.type.name == 'captcha'">
+  <div class="icon-holder">
+    <div class="icon-box" v-if="round.type.icon"><img :src="'svg/logo/'+round.type.icon"/></div>
+  </div>
+  <form class="input-holder" v-on:submit.prevent="roundSubmit">
+    <label class="captcha-image"><img :src="'img/captcha/'+round.img"/></label>
+    <label class="password">
+      <input type="text" v-model="round.password" v-bind:class="{error: errors.password}" v-focus="v-focus"/>
+      <div class="error-msg password-error" v-show="errors.password" v-html="errors.password"></div>
+    </label>
+    <div class="buttons">
+      <button class="submit" type="submit">Continue</button>
+    </div>
+  </form>
+</div>
