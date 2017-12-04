@@ -112,7 +112,8 @@ var trumpFamily = [
       },
       {
         type:roundTypes.question,
-        info: "Here's a question for <strong>30 points</strong>:",
+        info: 'Here\'s a question for <b class="points">40 points</strong>:',
+        points: 40,
         safeName: "clitoris location",
         question: "Where is the clitoris?",
         passwordErrorMessage: "Come on, just guess!",
@@ -149,7 +150,6 @@ var trumpFamily = [
       {
         type:roundTypes.furaffinity
       },
-      
       {
         type:roundTypes.twitter,
         username: '@EricTrump'
@@ -164,6 +164,9 @@ var trumpFamily = [
     rounds: [
       {
         type:roundTypes.wikipedia
+      },
+      {
+        type:roundTypes.furaffinity,
       },
       {
         type:roundTypes.google
@@ -199,7 +202,8 @@ var trumpFamily = [
       },
       {
         type:roundTypes.yesno,
-        info: "Here's a question for <strong>30 points</strong>:",
+        info: 'Here\'s a question for <strong class="points">30 points</strong>:',
+        points: 30,
         question: "Are you aware that most people have to work for a living?",
         countLabel: "aware of jobs",
         pNotifyText: "Okay, just checking." 
@@ -227,7 +231,7 @@ var trumpFamily = [
       },
       {
         type:roundTypes.yesno,
-        info: "Hey, quick question for 50 points:",
+        info: 'Hey, quick question for <strong class="points">50 points</strong>:',
         question: "Are you behind all of this? I mean, like is this some sort of Keyser Söze situation where everyone ends up getting indicted and then you disappear in an unmarked car and fly off to ruin some other country?",
         points: 50,
         countLabel: "Keyser Soze",
@@ -258,7 +262,7 @@ var trumpFamily = [
       },
       {
         type:roundTypes.yesno,
-        info: "Hey, speaking of assistants (<strong>30 points</strong>)",
+        info: 'Hey, speaking of assistants (<strong class="points">30 points</strong>):',
         points: 30,
         question: "So you know all the people that work for you? Like, drivers and maids and cooks are whatever? Are you aware that they're human beings?",
         countLabel: "aware of other humans",
@@ -278,9 +282,12 @@ var trumpFamily = [
       {
         type:roundTypes.maralago
       },
+      { 
+        type: roundTypes.stormfront
+      },
       {
         type:roundTypes.yesno,
-        info: "Question for you (<strong>30 points</strong>)",
+        info: 'Question for you (<strong class="points">30 points</strong>):',
         points: 30,
         question: "Don't you think it's weird that you still have the last name of “Trump”?",
         countLabel: "weird to be Trump",
