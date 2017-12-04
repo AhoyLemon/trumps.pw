@@ -1,8 +1,8 @@
 - var testing = true
-- var siteTitle = ""
-- var siteURL = ""
+- var siteTitle = "Trump Family Passwords"
+- var siteURL = "https://ahoylemon.github.io/trumps.pw"
 - var fPlusURL = ""
-- var description = ""
+- var description = "Where members of the Trump family can enter in passwords to EARN POINTS."
 - var d = new Date()
 - var lastUpdated = d.getFullYear() + '-' + (d.getMonth()<10?'0':'') + d.getMonth() + '-' + (d.getDate()<10?'0':'') + d.getDate() + '@' + (d.getHours()<10?'0':'') + d.getHours() + ':' + (d.getMinutes()<10?'0':'') + d.getMinutes() + ':' + (d.getSeconds()<10?'0':'') + d.getSeconds()
 doctype html
@@ -13,7 +13,7 @@ html(lang="en")
     main#app
       
       .flag(v-cloak)
-        video(v-bind:class="{visible: phase == 'gameOver'}" autoplay muted loop poster="/video/flag.jpg")
+        video(v-bind:class="{visible: phase == 'gameOver'}" autoplay muted loop poster="video/flag.jpg")
           source(src="/video/flag.mp4" type="video/mp4")
           source(src="/video/flag.webm" type="video/webm")
       

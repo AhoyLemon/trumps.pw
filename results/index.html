@@ -53,6 +53,18 @@
                   <td class="cell">{{site}}</td>
                   <td class="cell">{{foo.count}}</td>
                 </tr>
+                <template v-if="foo.yes">
+                  <tr class="row pass-row">
+                    <td class="cell">{{person}}</td>
+                    <td class="cell"> <b>Yes</b> to {{site}}</td>
+                    <td class="cell">{{foo.yes}}</td>
+                  </tr>
+                  <tr class="row pass-row">
+                    <td class="cell">{{person}}</td>
+                    <td class="cell"> <b>No</b> to {{site}}</td>
+                    <td class="cell">{{foo.no}}</td>
+                  </tr>
+                </template>
               </template>
             </template>
           </tbody>

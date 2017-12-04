@@ -42,6 +42,19 @@ html(lang="en")
                   td.cell {{person}}
                   td.cell {{site}}
                   td.cell {{foo.count}}
+                template(v-if="foo.yes")
+                  tr.row.pass-row
+                    td.cell {{person}}
+                    td.cell 
+                      b Yes
+                      |  to {{site}}
+                    td.cell {{foo.yes}}
+                  tr.row.pass-row
+                    td.cell {{person}}
+                    td.cell 
+                      b No
+                      |  to {{site}}
+                    td.cell {{foo.no}}
     script.
       // Initialize Firebase
       var config = {
