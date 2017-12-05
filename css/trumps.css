@@ -419,8 +419,11 @@ ul {
     font-size: 1.45em; }
   .introduction p {
     margin-bottom: 0.5em; }
+  .introduction b {
+    color: #ffde45; }
   .introduction .button-holder {
-    text-align: center; }
+    text-align: center;
+    padding-top: 1em; }
     .introduction .button-holder button {
       display: inline-block;
       font-size: 1.25rem;
