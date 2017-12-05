@@ -4,7 +4,7 @@ $quarterSize: $picSize / 4;
 
 
 .trumps {
-  a.avatar { border-radius: 50%; }
+  a.avatar { border-radius: 50%; outline: none; border: none; }
 }
 
 .which-trump-headline { font-family: $serif; font-weight: $bold; @extend %goldText;  padding-bottom: 0.5em; text-align: center; }

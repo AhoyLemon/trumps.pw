@@ -463,7 +463,9 @@ ul {
     padding-right: 10px; } }
 
 .trumps a.avatar {
-  border-radius: 50%; }
+  border-radius: 50%;
+  outline: none;
+  border: none; }
 
 .which-trump-headline {
   font-family: "Bitter", serif;
