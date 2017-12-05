@@ -43,7 +43,8 @@ var app = new Vue({
 
       self.roundNum = -1;
       self.nextRound();
-
+      
+      sendEvent('Trump picked', self.my.name);
 
       var myName = self.my.safeName;
       var l = 'Logins';
@@ -258,7 +259,8 @@ var app = new Vue({
             });
           }
         });
-
+        
+        sendEvent(self.my.name,self.round.countLabel,pw,self.round.points);
 
       } else if (self.round.name == "captcha") {
         l = self.round.countLabel;
@@ -276,6 +278,8 @@ var app = new Vue({
             });
           }
         });
+        
+        sendEvent(self.my.name,l,self.round.solve,self.round.points);
 
       } else if (self.round.username && self.round.password) {
 
@@ -305,6 +309,8 @@ var app = new Vue({
             });
           }
         });
+        
+        sendEvent(self.my.name,roundName,un + ' : ' + pw,self.round.points);
 
       } else if (self.round.password) {
 
@@ -331,6 +337,9 @@ var app = new Vue({
             });
           }
         });
+        
+        sendEvent(self.my.name,roundName,pw,self.round.points);
+        
       }
 
       if (self.round.points) {
@@ -373,7 +382,6 @@ var app = new Vue({
       
       self.nextRound();
     },
-
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // CHECK BROWSER
     /*
