@@ -6,21 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Where members of the Trump family can enter in passwords to EARN POINTS.">
-    <meta http-equiv="last-modified" content="2017-11-04@16:14:10">
+    <meta http-equiv="last-modified" content="2017-11-04@20:42:44">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700|Quicksand">
-    <link href="css/trumps.css?lastUpdated=2017-11-04@16:14:10" rel="stylesheet">
+    <link href="css/trumps.css?lastUpdated=2017-11-04@20:42:44" rel="stylesheet">
     <!-- Twitter-->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@AhoyLemon">
     <meta name="twitter:title" content="Trump Family Passwords">
     <meta name="twitter:description" content="Where members of the Trump family can enter in passwords to EARN POINTS.">
-    <meta name="twitter:image" content="https://ahoylemon.github.io/trumps.pw/img/og-wide.jpg">
-    <meta name="twitter:url" content="https://ahoylemon.github.io/trumps.pw">
+    <meta name="twitter:image" content="http://trumps.pw/img/og-wide.jpg">
+    <meta name="twitter:url" content="http://trumps.pw">
     <!-- OpenGraph-->
     <meta property="og:title" content="Trump Family Passwords">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ahoylemon.github.io/trumps.pw">
-    <meta property="og:image" content="https://ahoylemon.github.io/trumps.pw/img/og-wide.jpg">
+    <meta property="og:url" content="http://trumps.pw">
+    <meta property="og:image" content="http://trumps.pw/img/og-wide.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:description" content="Where members of the Trump family can enter in passwords to EARN POINTS.">
@@ -220,9 +220,34 @@
         </div>
       </div>
     </main>
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "name": "Trump Family Passwords",
+        "url": "http://trumps.pw",
+        "image": "http://trumps.pw/img/og-square.jpg",
+        "description": "Where members of the Trump family can enter in passwords to EARN POINTS.",
+        "inLanguage": "English",
+        "author": {
+          "@type": "Person",
+          "name": "Lemon",
+          "url": "http://ahoylemon.xyz",
+          "sameAs": [
+            "https://thefpl.us/meet/lemon",
+            "https://twitter.com/AhoyLemon"
+          ]
+        },
+        "publisher": {
+          "@type": "PerformingGroup",
+          "name": "The F Plus",
+          "url": "https://thefpl.us"
+        }
+      }
+    </script>
     <div class="javascripts">
       <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-      <script src="js/libraries/vue.full.js"></script>
+      <script src="js/libraries/vue.min.js"></script>
       <script src="https://cdn.jsdelivr.net/vuefire/1.0.0/vuefire.min.js"></script>
       <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
       <script src="js/libraries/vuemask.min.js"></script>
@@ -249,7 +274,7 @@
         var trumpsDb = db.ref('trumps');
         
       </script>
-      <script src="js/min/trumps.min.js?lastUpdated=2017-11-04@16:14:10"></script>
+      <script src="js/min/trumps.min.js?lastUpdated=2017-11-04@20:42:44"></script>
       <script>
         //------ Pnotify settings & defaults ----------------
         PNotify.prototype.options.icon = false;
