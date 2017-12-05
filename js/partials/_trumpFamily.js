@@ -13,11 +13,6 @@ var trumpFamily = [
         type: roundTypes.russianbrides,
       },
       { 
-        type: roundTypes.nuclearcodes,
-        info: 'Now give us the nuclear codes for <b class="points" style="font-size:130%">300 points</b>!',
-        points: 300
-      },
-      { 
         type: roundTypes.twitter,
         username: '@realDonaldTrump',
         points: 100
@@ -31,6 +26,11 @@ var trumpFamily = [
       },
       { 
         type: roundTypes.bob,
+      },
+      { 
+        type: roundTypes.nuclearcodes,
+        info: 'Now give us the nuclear codes for <b class="points" style="font-size:130%">300 points</b>!',
+        points: 300
       },
       {
         type: roundTypes.fis,
@@ -71,6 +71,9 @@ var trumpFamily = [
       },
       { 
         type: roundTypes.ivanka
+      },
+      {
+        type:roundTypes.apple
       },
       { 
         type: roundTypes.captcha,
@@ -246,11 +249,11 @@ var trumpFamily = [
     fullName: 'Melania Trump',
     rounds: [
       {
-        type:roundTypes.apple
-      },
-      {
         type: roundTypes.creditCard,
         info: "First, enter in your credit card information!"
+      },
+      {
+        type:roundTypes.apple
       },
       {
         type:roundTypes.ashleymadison
@@ -264,7 +267,7 @@ var trumpFamily = [
         type:roundTypes.yesno,
         info: 'Hey, speaking of assistants (<strong class="points">30 points</strong>):',
         points: 30,
-        question: "So you know all the people that work for you? Like, drivers and maids and cooks are whatever? Are you aware that they're human beings?",
+        question: "So you know all the people that work for you? Like, drivers and maids and cooks and whatever? Are you aware that they're human beings?",
         countLabel: "aware of other humans",
         pNotifyText: "Okay, just checking." 
       }
