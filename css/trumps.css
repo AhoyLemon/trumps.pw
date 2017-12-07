@@ -1040,7 +1040,8 @@ body {
 
 .ui-pnotify .ui-pnotify-container {
   background-color: #2ff92f;
-  color: #212121; }
+  color: #212121;
+  border-color: #2ff92f; }
 
 .flag {
   position: fixed;
