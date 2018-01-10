@@ -13,9 +13,55 @@
 @import "partials/_avatars"; 
 @import "partials/_passwords"; 
 @import "partials/_main";
+@import "partials/_banner";
 @import "partials/_gameover";
 
 
 // LIBRARIES
 @import "libraries/pnotify";
 @import "libraries/animate";
+
+.ui-pnotify.site-by-lemon {
+  .ui-pnotify-container { background-color:yellow; }
+  .inside {
+    .icon-holder { float:left; }
+    .icon { width:56px; height: 56px; }
+    .text-holder { display: inline-block; padding-left: 10px;
+      .text { text-decoration: none; font-family: $serif; color:$black; font-size:105%; margin-top: 20px;
+        &:hover { text-decoration: underline; }
+      }
+    }
+  }
+  .ui-pnotify-closer { position:relative; width: 20px; height: 20px; border:1px solid black; border-radius: 50%; top:-3px; z-index: 99999;
+    .brighttheme-icon-closer {
+      &:after { top:2px; }
+    }
+    &:hover { background:black;
+      .brighttheme-icon-closer { color:yellow; }
+    }
+  }
+}
+
+
+/*
+
+
+.banner { background-color:$lemonYellow; width:305px; @include position(fixed,null,10px,10px); @include flex-container(); transform: translateX(320px); transition:transform 0.5s cubic-bezier(.63,.49,.63,1.45);
+  //.invisible {  }
+  .icon-holder { @include flex-item(76px); padding: 10px; color:$lemonBlack; }
+  .text-holder { @include flex-item(calc(100% - 76px)); padding-top:20px; padding-right: 20px; font-size:120%; }
+  .text { color:$lemonBlack; text-decoration: none;
+    &:hover { text-decoration: underline; }
+  }
+  .close { @include position(absolute,5px,5px); cursor: pointer; color:$lemonBlack;
+    svg { width:18px; height: 18px; }
+    .fill { opacity: 0; }
+    &:hover {
+      .x { fill:$lemonYellow; }
+      .fill { opacity: 1; }
+    }
+  }
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.65);
+  &.visible { transform: translateX(0); }
+}
+*/

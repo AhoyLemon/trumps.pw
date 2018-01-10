@@ -389,7 +389,6 @@ ul {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
   -webkit-flex-wrap: wrap;
@@ -398,10 +397,8 @@ ul {
   flex-wrap: wrap;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  -webkit-align-items: center;
   align-items: center;
   -webkit-box-pack: center;
-  -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center; }
   .introduction h1 {
@@ -574,7 +571,6 @@ ul {
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-    -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
     -webkit-flex-wrap: wrap;
@@ -583,10 +579,8 @@ ul {
     flex-wrap: wrap;
     -webkit-box-align: center;
     -ms-flex-align: center;
-    -webkit-align-items: center;
     align-items: center;
     -webkit-box-pack: center;
-    -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center; }
   .which-trump-headline {
@@ -599,7 +593,6 @@ ul {
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-    -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
     -webkit-flex-wrap: wrap;
@@ -608,27 +601,21 @@ ul {
     flex-wrap: wrap;
     -webkit-box-align: stretch;
     -ms-flex-align: stretch;
-    -webkit-align-items: stretch;
     align-items: stretch;
     -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between;
     padding-left: 10px;
     padding-right: 10px; }
     .trumps a.avatar {
       width: 30vw;
-      -webkit-flex-basis: 30vw;
       -ms-flex-preferred-size: 30vw;
       flex-basis: 30vw;
       -webkit-box-flex: 0;
-      -webkit-flex-grow: 0;
       -ms-flex-positive: 0;
       flex-grow: 0;
-      -webkit-flex-shrink: 1;
       -ms-flex-negative: 1;
       flex-shrink: 1;
-      -webkit-align-self: auto;
       -ms-flex-item-align: auto;
       align-self: auto;
       height: 30vw;
@@ -667,7 +654,6 @@ body {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
   -webkit-flex-wrap: wrap;
@@ -676,10 +662,8 @@ body {
   flex-wrap: wrap;
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
-  -webkit-align-items: stretch;
   align-items: stretch;
   -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between; }
   .password-screen .formbox .error-msg {
@@ -691,17 +675,13 @@ body {
   .password-screen .formbox input.error {
     border: 2px solid #ee2a2a; }
   .password-screen .formbox .icon-holder {
-    -webkit-flex-basis: 100px;
     -ms-flex-preferred-size: 100px;
     flex-basis: 100px;
     -webkit-box-flex: 1;
-    -webkit-flex-grow: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;
-    -webkit-flex-shrink: 1;
     -ms-flex-negative: 1;
     flex-shrink: 1;
-    -webkit-align-self: auto;
     -ms-flex-item-align: auto;
     align-self: auto;
     padding-right: 1em;
@@ -711,17 +691,13 @@ body {
       width: 80px;
       height: 80px; }
   .password-screen .formbox .input-holder {
-    -webkit-flex-basis: calc(100% - 100px);
     -ms-flex-preferred-size: calc(100% - 100px);
     flex-basis: calc(100% - 100px);
     -webkit-box-flex: 1;
-    -webkit-flex-grow: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;
-    -webkit-flex-shrink: 1;
     -ms-flex-negative: 1;
     flex-shrink: 1;
-    -webkit-align-self: auto;
     -ms-flex-item-align: auto;
     align-self: auto;
     display: -webkit-box;
@@ -731,7 +707,6 @@ body {
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-    -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
     -webkit-flex-wrap: wrap;
@@ -740,37 +715,28 @@ body {
     flex-wrap: wrap;
     -webkit-box-align: stretch;
     -ms-flex-align: stretch;
-    -webkit-align-items: stretch;
     align-items: stretch; }
 
 .password-screen .username, .password-screen .password, .password-screen .card-number, .password-screen .buttons {
-  -webkit-flex-basis: 100%;
   -ms-flex-preferred-size: 100%;
   flex-basis: 100%;
   -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-  -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
-  -webkit-align-self: auto;
   -ms-flex-item-align: auto;
   align-self: auto; }
 
 .password-screen .expiration, .password-screen .cvc {
   width: calc(50% - 10px);
-  -webkit-flex-basis: calc(50% - 10px);
   -ms-flex-preferred-size: calc(50% - 10px);
   flex-basis: calc(50% - 10px);
   -webkit-box-flex: 0;
-  -webkit-flex-grow: 0;
   -ms-flex-positive: 0;
   flex-grow: 0;
-  -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
-  -webkit-align-self: auto;
   -ms-flex-item-align: auto;
   align-self: auto; }
 
@@ -782,7 +748,6 @@ body {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
   -webkit-flex-wrap: wrap;
@@ -791,23 +756,18 @@ body {
   flex-wrap: wrap;
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
-  -webkit-align-items: stretch;
   align-items: stretch;
   width: 100%;
   padding-top: 20px; }
 
 .password-screen .radio {
-  -webkit-flex-basis: calc(50% - 4px);
   -ms-flex-preferred-size: calc(50% - 4px);
   flex-basis: calc(50% - 4px);
   -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-  -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
-  -webkit-align-self: auto;
   -ms-flex-item-align: auto;
   align-self: auto;
   color: #212121;
@@ -929,7 +889,6 @@ body {
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-    -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
     -webkit-flex-wrap: wrap;
@@ -938,21 +897,16 @@ body {
     flex-wrap: wrap;
     -webkit-box-align: stretch;
     -ms-flex-align: stretch;
-    -webkit-align-items: stretch;
     align-items: stretch;
     margin-bottom: 1em; }
     .screen .top-row .welcome-box {
-      -webkit-flex-basis: 5rem;
       -ms-flex-preferred-size: 5rem;
       flex-basis: 5rem;
       -webkit-box-flex: 1;
-      -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
       flex-grow: 1;
-      -webkit-flex-shrink: 1;
       -ms-flex-negative: 1;
       flex-shrink: 1;
-      -webkit-align-self: auto;
       -ms-flex-item-align: auto;
       align-self: auto;
       display: -webkit-box;
@@ -962,7 +916,6 @@ body {
       display: flex;
       -webkit-box-orient: horizontal;
       -webkit-box-direction: normal;
-      -webkit-flex-direction: row;
       -ms-flex-direction: row;
       flex-direction: row;
       -webkit-flex-wrap: wrap;
@@ -971,24 +924,18 @@ body {
       flex-wrap: wrap;
       -webkit-box-align: center;
       -ms-flex-align: center;
-      -webkit-align-items: center;
       align-items: center;
       -webkit-box-pack: center;
-      -webkit-justify-content: center;
       -ms-flex-pack: center;
       justify-content: center; }
     .screen .top-row .welcome-text {
-      -webkit-flex-basis: calc(100% - 5rem);
       -ms-flex-preferred-size: calc(100% - 5rem);
       flex-basis: calc(100% - 5rem);
       -webkit-box-flex: 1;
-      -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
       flex-grow: 1;
-      -webkit-flex-shrink: 1;
       -ms-flex-negative: 1;
       flex-shrink: 1;
-      -webkit-align-self: auto;
       -ms-flex-item-align: auto;
       align-self: auto;
       display: -webkit-box;
@@ -998,7 +945,6 @@ body {
       display: flex;
       -webkit-box-orient: horizontal;
       -webkit-box-direction: normal;
-      -webkit-flex-direction: row;
       -ms-flex-direction: row;
       flex-direction: row;
       -webkit-flex-wrap: wrap;
@@ -1007,14 +953,11 @@ body {
       flex-wrap: wrap;
       -webkit-box-align: center;
       -ms-flex-align: center;
-      -webkit-align-items: center;
       align-items: center;
       -webkit-box-pack: center;
-      -webkit-justify-content: center;
       -ms-flex-pack: center;
       justify-content: center;
       -webkit-box-pack: left;
-      -webkit-justify-content: left;
       -ms-flex-pack: left;
       justify-content: left; }
     .screen .top-row figure.avatar {
@@ -3906,3 +3849,63 @@ Color Scheme: http://paletton.com/palette.php?uid=c1T3n2J040kpEKzpEKzbEPSOEyiNk9
 .slideOutUp {
   -webkit-animation-name: slideOutUp;
   animation-name: slideOutUp; }
+
+.ui-pnotify.site-by-lemon .ui-pnotify-container {
+  background-color: yellow; }
+
+.ui-pnotify.site-by-lemon .inside .icon-holder {
+  float: left; }
+
+.ui-pnotify.site-by-lemon .inside .icon {
+  width: 56px;
+  height: 56px; }
+
+.ui-pnotify.site-by-lemon .inside .text-holder {
+  display: inline-block;
+  padding-left: 10px; }
+  .ui-pnotify.site-by-lemon .inside .text-holder .text {
+    text-decoration: none;
+    font-family: "Bitter", serif;
+    color: #212121;
+    font-size: 105%;
+    margin-top: 20px; }
+    .ui-pnotify.site-by-lemon .inside .text-holder .text:hover {
+      text-decoration: underline; }
+
+.ui-pnotify.site-by-lemon .ui-pnotify-closer {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+  border-radius: 50%;
+  top: -3px;
+  z-index: 99999; }
+  .ui-pnotify.site-by-lemon .ui-pnotify-closer .brighttheme-icon-closer:after {
+    top: 2px; }
+  .ui-pnotify.site-by-lemon .ui-pnotify-closer:hover {
+    background: black; }
+    .ui-pnotify.site-by-lemon .ui-pnotify-closer:hover .brighttheme-icon-closer {
+      color: yellow; }
+
+/*
+
+
+.banner { background-color:$lemonYellow; width:305px; @include position(fixed,null,10px,10px); @include flex-container(); transform: translateX(320px); transition:transform 0.5s cubic-bezier(.63,.49,.63,1.45);
+  //.invisible {  }
+  .icon-holder { @include flex-item(76px); padding: 10px; color:$lemonBlack; }
+  .text-holder { @include flex-item(calc(100% - 76px)); padding-top:20px; padding-right: 20px; font-size:120%; }
+  .text { color:$lemonBlack; text-decoration: none;
+    &:hover { text-decoration: underline; }
+  }
+  .close { @include position(absolute,5px,5px); cursor: pointer; color:$lemonBlack;
+    svg { width:18px; height: 18px; }
+    .fill { opacity: 0; }
+    &:hover {
+      .x { fill:$lemonYellow; }
+      .fill { opacity: 1; }
+    }
+  }
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.65);
+  &.visible { transform: translateX(0); }
+}
+*/
