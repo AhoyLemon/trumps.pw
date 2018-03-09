@@ -26,6 +26,7 @@ var app = new Vue({
       points: 0
     },
     roundNum: null,
+    sessionRounds: -1,
     round: {},
     errors: {},
     rounds: [],
@@ -99,6 +100,7 @@ var app = new Vue({
     nextRound: function() {
       var self = this;
       self.roundNum++;
+      self.sessionRounds++;
 
       self.errors = {};
 
@@ -132,6 +134,10 @@ var app = new Vue({
 
       if (self.round.type.info && !self.round.info) {
         self.round.info = self.round.type.info;
+      }
+      
+      if (self.sessionRounds == 3) {
+        self.siteByLemon();
       }
 
     },
@@ -394,15 +400,17 @@ var app = new Vue({
       self.nextRound();
     },
 
-  },
+  }
+  /*
   mounted: function () {
     var self = this;
     
     setTimeout(function(){ 
       self.siteByLemon();
-    }, 16000);
+    }, 300);
     
   }
+  */
 });
 
 Vue.directive('focus', {
