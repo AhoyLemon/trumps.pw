@@ -1,4 +1,4 @@
-# TRUMPS.PW
+![TRUMPS.PW](http://trumps.pw/img/og-wide.jpg)
 ### Where members of the Trump family can enter in passwords to EARN POINTS.
 
 ## What?
