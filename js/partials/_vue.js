@@ -147,6 +147,12 @@ var app = new Vue({
       self.phase = 'gameOver';
     },
 
+    pickAnotherTrump: function() {
+      var self = this;
+      this.my.points = 0;
+      this.phase = 'pickTrump';
+    },
+
     startOver: function() {
       var self = this;
       self.roundNum = -1;
