@@ -404,19 +404,9 @@ var app = new Vue({
       });
       
       self.nextRound();
-    },
+    }
 
   }
-  /*
-  mounted: function () {
-    var self = this;
-    
-    setTimeout(function(){ 
-      self.siteByLemon();
-    }, 300);
-    
-  }
-  */
 });
 
 Vue.directive('focus', {
